@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/legitbot.svg)](https://badge.fury.io/rb/legitbot)
+
 # Legitbot
 
 Ruby gem to check if an IP really belongs to some bot, typically a search
