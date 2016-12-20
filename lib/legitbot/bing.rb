@@ -3,10 +3,6 @@ module Legitbot
   class Bing < BotMatch
     ValidDomains = ["search.msn.com."]
 
-    def initialize(ip, resolver_config = nil)
-      super(ip, resolver_config)
-    end
-
     def valid?
       subdomain_of?(*Bing::ValidDomains) && reverse_resolves?
     end

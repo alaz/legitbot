@@ -4,10 +4,6 @@ module Legitbot
   class Yandex < BotMatch
     ValidDomains = ["yandex.ru.", "yandex.net.", "yandex.com."]
 
-    def initialize(ip, resolver_config = nil)
-      super(ip, resolver_config)
-    end
-
     def valid?
       subdomain_of?(*Yandex::ValidDomains) && reverse_resolves?
     end

@@ -3,10 +3,6 @@ module Legitbot
   class Baidu < BotMatch
     ValidDomains = ["baidu.com.", "baidu.jp."]
 
-    def initialize(ip, resolver_config = nil)
-      super(ip, resolver_config)
-    end
-
     def valid?
       subdomain_of?(*Baidu::ValidDomains)
     end

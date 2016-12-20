@@ -7,10 +7,6 @@ module Legitbot
   class Google < BotMatch
     ValidDomains = ["google.com.", "googlebot.com."]
 
-    def initialize(ip, resolver_config = nil)
-      super(ip, resolver_config)
-    end
-
     def valid?
       subdomain_of?(*Google::ValidDomains) && reverse_resolves?
     end
