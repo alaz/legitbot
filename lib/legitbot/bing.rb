@@ -1,6 +1,6 @@
 module Legitbot
   # https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot/
-  class Bing < Match
+  class Bing < BotMatch
     ValidDomains = ["search.msn.com."]
 
     def initialize(ip, resolver_config = nil)

@@ -4,7 +4,7 @@ module Legitbot
   # https://support.google.com/webmasters/answer/1061943
   # https://support.google.com/webmasters/answer/80553
 
-  class Google < Match
+  class Google < BotMatch
     ValidDomains = ["google.com.", "googlebot.com."]
 
     def initialize(ip, resolver_config = nil)

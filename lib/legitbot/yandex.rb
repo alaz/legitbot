@@ -1,7 +1,7 @@
 module Legitbot
   # https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml
 
-  class Yandex < Match
+  class Yandex < BotMatch
     ValidDomains = ["yandex.ru.", "yandex.net.", "yandex.com."]
 
     def initialize(ip, resolver_config = nil)

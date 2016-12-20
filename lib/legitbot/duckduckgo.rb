@@ -1,6 +1,6 @@
 module Legitbot
   # https://duckduckgo.com/duckduckbot
-  class DuckDuckGo < Match
+  class DuckDuckGo < BotMatch
     ValidIPs = %w(72.94.249.34 72.94.249.35 72.94.249.36 72.94.249.37 72.94.249.38)
 
     def initialize(ip, resolver_config = nil)
