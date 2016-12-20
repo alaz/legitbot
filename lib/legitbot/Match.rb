@@ -1,4 +1,8 @@
 module Legitbot
+  ##
+  # Represents a bot instance match. Typical methods are
+  # +valid?+, +fake?+ and +detected_as+
+  #
   class Match
     def initialize(ip, resolver_config = nil)
       @dns = Resolv::DNS.new(resolver_config)
