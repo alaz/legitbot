@@ -12,4 +12,11 @@ Rake::TestTask.new do |t|
   t.verbose = true
 end
 
+desc 'Start a console'
+task :console do
+  require 'irb'
+  ARGV.clear
+  IRB.start
+end
+
 task default: %w[test]

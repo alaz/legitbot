@@ -34,7 +34,9 @@ end
 ## Issues, problems, plans
 
 * Rails middleware
-* Facebook: https://developers.facebook.com/docs/sharing/webmasters/crawler
+* More testing for Facebook
+* Review for thread safety
+* Make it possible to reload Facebook IP ranges
 
 ## License
 
