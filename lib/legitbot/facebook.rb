@@ -11,16 +11,12 @@ module Legitbot
       client = Irrc::Client.new
       client.query :radb, 'AS32934'
       results = client.perform
-      Hash[
-        :ipv4 => SegmentTree.new(
-          results[AS][:ipv4][AS].map { |cidr|
+
+      Hash[%i(ipv4 ipv6).map { |k|
+        [k, SegmentTree.new(results[AS][k][AS].map { |cidr|
             [IPAddr.new(cidr).to_range, true]
-          }),
-        :ipv6 => SegmentTree.new(
-          results[AS][:ipv6][AS].map { |cidr|
-            [IPAddr.new(cidr).to_range, true]
-          })
-      ]
+          })]
+      }]
     end
 
     def valid?
