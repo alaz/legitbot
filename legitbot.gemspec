@@ -15,9 +15,10 @@ Gem::Specification.new do |spec|
     "made by a real search engine, not a fake"
 
   spec.required_ruby_version = '>= 2.0.0'
+  spec.add_development_dependency "rake"
+  spec.add_development_dependency "minitest"
 
-  spec.files = Dir.glob("{lib}/**/*") + %w(Rakefile README.md LICENSE.txt)
+  spec.files = `git ls-files`.split($/)
   spec.rdoc_options = ["--charset=UTF-8"]
-  spec.require_paths = ["lib"]
   spec.test_files = Dir.glob("test/**/*")
 end
