@@ -31,6 +31,15 @@ Rack::Attack.blocklist("fake Googlebot") do |req|
 end
 ```
 
+## Supported
+
+* [Google crawlers](https://support.google.com/webmasters/answer/1061943)
+* [Yandex robots](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
+* [Bingbot](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot/)
+* [Baidu spider](http://help.baidu.com/question?prod_en=master&class=498&id=1000973)
+* [DuckDuckGo bot](https://duckduckgo.com/duckduckbot)
+* [Facebook crawler](https://developers.facebook.com/docs/sharing/webmasters/crawler)
+
 ## Issues, problems, plans
 
 * Rails middleware
