@@ -46,6 +46,7 @@ end
 * More testing for Facebook
 * Review for thread safety
 * Make it possible to reload Facebook IP ranges
+* Bots masquerading as someone else, e.g. `Telegram (like Twitter)` - what to do?
 
 ## License
 
