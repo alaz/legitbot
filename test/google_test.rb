@@ -11,7 +11,7 @@ class GoogleTest < Minitest::Test
   end
 
   def test_valid_ip
-    ip = "66.249.78.6"
+    ip = "66.249.64.141"
     match = Legitbot::Google.new ip
     reverse_name = match.reverse_name
     assert match.subdomain_of?("googlebot.com."), msg: "#{reverse_name} is a subdomain of googlebot.com"
@@ -25,13 +25,13 @@ class GoogleTest < Minitest::Test
   end
 
   def test_valid_ua
-    bot = Legitbot.bot("Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)", "66.249.78.6")
+    bot = Legitbot.bot("Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)", "66.249.64.141")
     assert bot, msg: "Googlebot detected from User-Agent"
     assert bot.valid?, msg: "Valid Googlebot"
   end
 
   def test_engine_name
-    bot = Legitbot.bot("Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)", "66.249.78.6")
+    bot = Legitbot.bot("Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)", "66.249.64.141")
     assert_equal "Google", bot.detected_as
   end
 end
