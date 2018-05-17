@@ -1,13 +1,15 @@
 require 'segment_tree'
 require 'irrc'
-require 'concurrent'
+require 'monitor'
 
 module Legitbot
   # https://developers.facebook.com/docs/sharing/webmasters/crawler
 
   class Facebook < BotMatch
+    lock = Monitor.new
+
     AS = 'AS32934'
-    ValidIPs = Concurrent::Delay.new do
+    ValidIPs = lock.synchronize do
       client = Irrc::Client.new
       client.query :radb, 'AS32934'
       results = client.perform
@@ -21,11 +23,7 @@ module Legitbot
 
     def valid?
       ip = IPAddr.new(@ip)
-      if ip.ipv4?
-        ValidIPs.value[:ipv4].find(ip)
-      else
-        ValidIPs.value[:ipv6].find(ip)
-      end
+      ValidIPs[ip.ipv4? ? :ipv4 : :ipv6].find(ip)
     end
   end
 
