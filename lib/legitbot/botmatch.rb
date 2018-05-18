@@ -1,3 +1,6 @@
+require 'resolv'
+require 'ipaddr'
+
 module Legitbot
   ##
   # Represents a bot instance match. Typical methods are

@@ -1,5 +1,3 @@
-require 'resolv'
-
 module Legitbot
   # https://support.google.com/webmasters/answer/1061943
   # https://support.google.com/webmasters/answer/80553

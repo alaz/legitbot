@@ -1,6 +1,7 @@
 require 'segment_tree'
 require 'irrc'
 require 'monitor'
+require 'ipaddr'
 
 module Legitbot
   # https://developers.facebook.com/docs/sharing/webmasters/crawler

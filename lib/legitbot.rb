@@ -1,8 +1,7 @@
-require 'resolv'
-
 require_relative 'legitbot/legitbot'
 require_relative 'legitbot/botmatch'
 
+require_relative 'legitbot/apple'
 require_relative 'legitbot/baidu'
 require_relative 'legitbot/bing'
 require_relative 'legitbot/duckduckgo'
