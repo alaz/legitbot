@@ -33,18 +33,19 @@ end
 
 ## Supported
 
-* [Google crawlers](https://support.google.com/webmasters/answer/1061943)
-* [Yandex robots](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
-* [Bingbot](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot/)
+* [Applebot](https://support.apple.com/en-us/HT204683)
 * [Baidu spider](http://help.baidu.com/question?prod_en=master&class=498&id=1000973)
+* [Bingbot](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot/)
 * [DuckDuckGo bot](https://duckduckgo.com/duckduckbot)
 * [Facebook crawler](https://developers.facebook.com/docs/sharing/webmasters/crawler)
+* [Google crawlers](https://support.google.com/webmasters/answer/1061943)
+* [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
+* [Yandex robots](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
 
 ## Issues, problems, plans
 
 * Rails middleware
 * More testing for Facebook
-* Review for thread safety
 * Make it possible to reload Facebook IP ranges
 * Bots masquerading as someone else, e.g. `Telegram (like Twitter)` - what to do?
 
