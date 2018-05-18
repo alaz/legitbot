@@ -42,13 +42,6 @@ end
 * [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
 * [Yandex robots](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
 
-## Issues, problems, plans
-
-* Rails middleware
-* More testing for Facebook
-* Make it possible to reload Facebook IP ranges
-* Bots masquerading as someone else, e.g. `Telegram (like Twitter)` - what to do?
-
 ## License
 
 Apache 2.0
