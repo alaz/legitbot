@@ -32,6 +32,6 @@ class PinterestTest < Minitest::Test
 
   def test_engine_name
     bot = Legitbot.bot("Mozilla/5.0 (compatible; Pinterestbot/1.0; +https://www.pinterest.com/bot.html)", "54.236.1.11")
-    assert_equal "Pinterest", bot.detected_as
+    assert_equal :pinterest, bot.detected_as
   end
 end

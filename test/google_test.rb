@@ -32,6 +32,6 @@ class GoogleTest < Minitest::Test
 
   def test_engine_name
     bot = Legitbot.bot("Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)", "66.249.64.141")
-    assert_equal "Google", bot.detected_as
+    assert_equal :google, bot.detected_as
   end
 end

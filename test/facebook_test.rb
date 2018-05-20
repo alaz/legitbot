@@ -16,7 +16,7 @@ class FacebookTest < Minitest::Test
 
   def test_user_agent
     bot = Legitbot.bot("facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)", "31.13.76.56")
-    assert_equal "Facebook", bot.detected_as
+    assert_equal :facebook, bot.detected_as
     assert bot.valid?, msg: "A valid Facebook User-agent and IP"
   end
 end

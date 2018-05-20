@@ -17,7 +17,7 @@ bot = Legitbot.bot(userAgent, ip)
 it will be an instance with methods
 
 ```ruby
-bot.detected_as # => "Google"
+bot.detected_as # => :google
 bot.valid? # => true
 bot.fake? # => false
 ```

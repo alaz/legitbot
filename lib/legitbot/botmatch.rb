@@ -43,7 +43,7 @@ module Legitbot
     end
 
     def detected_as
-      self.class.name.split('::').last
+      self.class.name.split('::').last.downcase.to_sym
     end
 
     def fake?
