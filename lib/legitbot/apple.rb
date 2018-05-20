@@ -12,5 +12,9 @@ module Legitbot
     end
   end
 
+  class Apple_as_Google < Apple
+  end
+
   rule Legitbot::Apple, %w(Applebot)
+  rule Legitbot::Apple_as_Google, %w(Googlebot)
 end

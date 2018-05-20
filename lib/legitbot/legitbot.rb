@@ -11,12 +11,15 @@ module Legitbot
   # :yields: a found bot
   #
   def self.bot(userAgent, ip, resolver_config = nil)
-    bot =
+    bots =
       @rules.select { |rule|
         rule[:fragments].any? {|f| userAgent.index f}
       }.map { |rule|
         rule[:class].new(ip, resolver_config)
-      }.first
+      }
+
+    bot = bots.select { |bot| bot.valid? }.first if bots.size > 1
+    bot = bots.first if bot.nil?
 
     if bot && block_given?
       yield bot
