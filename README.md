@@ -31,6 +31,16 @@ Rack::Attack.blocklist("fake Googlebot") do |req|
 end
 ```
 
+Or if you do not like all these nasty crawlers stealing your content or
+maybe evaluating it and getting ready to invade your site with spammers,
+block them all:
+
+```ruby
+Rack::Attack.blocklist 'fake search engines' do |request|
+  Legitbot.bot(request.user_agent, request.ip)&.fake?
+end
+```
+
 ## Supported
 
 * [Applebot](https://support.apple.com/en-us/HT204683)
