@@ -1,8 +1,8 @@
 # Legitbot [![Build Status](https://secure.travis-ci.org/alaz/legitbot.png?branch=master)](http://travis-ci.org/alaz/legitbot) [![Gem Version](https://badge.fury.io/rb/legitbot.svg)](https://badge.fury.io/rb/legitbot)
 
-Ruby gem to check if an IP really belongs to some bot, typically a search
-engine. This can of much help if one wants to protect his/her web site from
-malicious scanners who pretend to be e.g. a Googlebot.
+Ruby gem to check that an IP belongs to a bot, typically a search
+engine. This can be of help in protecting a web site from fake search
+engines.
 
 ## Usage
 
@@ -14,7 +14,7 @@ bot = Legitbot.bot(userAgent, ip)
 ```
 
 `bot` will be `nil` if no bot signature was found in the `User-Agent`. Otherwise,
-it will be an instance with methods
+it will be an object with methods
 
 ```ruby
 bot.detected_as # => :google
@@ -22,7 +22,7 @@ bot.valid? # => true
 bot.fake? # => false
 ```
 
-Sometimes you already know what search engine to expect. For example, you may
+Sometimes you already know what search engine to expect. For example, you might
 be using [rack-attack](https://github.com/kickstarter/rack-attack):
 
 ```ruby
@@ -33,7 +33,7 @@ end
 
 Or if you do not like all these nasty crawlers stealing your content or
 maybe evaluating it and getting ready to invade your site with spammers,
-block them all:
+then block them all:
 
 ```ruby
 Rack::Attack.blocklist 'fake search engines' do |request|
@@ -58,9 +58,7 @@ Apache 2.0
 
 ## References
 
-* I have initially created Play Framework version in Scala: [play-legitbot](https://github.com/osinka/play-legitbot)
+* Play Framework variant in Scala: [play-legitbot](https://github.com/osinka/play-legitbot)
 * Article [When (Fake) Googlebots Attack Your Rails App](http://jessewolgamott.com/blog/2015/11/17/when-fake-googlebots-attack-your-rails-app/)
-* [Voight-Kampff](https://github.com/biola/Voight-Kampff) is a Ruby gem which
+* [Voight-Kampff](https://github.com/biola/Voight-Kampff) is a Ruby gem that
   detects bots by `User-Agent`
-* [browser](https://github.com/fnando/browser) is a Ruby gem which may tell
-  you if the request comes from a search engine.
