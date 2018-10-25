@@ -1,5 +1,5 @@
 module Legitbot
-  # https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml
+  # https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html
 
   class Yandex < BotMatch
     ValidDomains = ["yandex.ru.", "yandex.net.", "yandex.com."]
@@ -9,8 +9,9 @@ module Legitbot
     end
   end
 
-  rule Legitbot::Yandex, %w(YandexBot YandexMobileBot YandexImages YandexVideo
+  rule Legitbot::Yandex, %w(YandexBot YandexAccessibilityBot YandexMobileBot
+    YandexDirectDyn YandexScreenshotBot YandexImages YandexVideo YandexVideoParser
     YandexMedia YandexBlogs YandexFavicons YandexWebmaster YandexPagechecker
-    YandexImageResizer YandexSitelinks YandexMetrika YandexDirectDyn YandexRCA
-    YaDirectFetcher YandexAntivirus YandexVertis YandexCalendar)
+    YandexImageResizer YaDirectFetcher YandexCalendar YandexSitelinks YandexMetrika
+    YandexNews YandexVertis YandexSearchShop YandexVerticals)
 end
