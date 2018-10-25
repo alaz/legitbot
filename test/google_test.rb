@@ -30,8 +30,13 @@ class GoogleTest < Minitest::Test
     assert bot.valid?, msg: "Valid Googlebot"
   end
 
-  def test_engine_name
+  def test_valid_name
     bot = Legitbot.bot("Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)", "66.249.64.141")
+    assert_equal :google, bot.detected_as
+  end
+
+  def test_fake_name
+    bot = Legitbot.bot("Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)", "81.1.172.108")
     assert_equal :google, bot.detected_as
   end
 end

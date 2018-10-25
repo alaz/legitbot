@@ -19,7 +19,7 @@ module Legitbot
       }
 
     selected = bots.select { |b| b.valid? }.first if bots.size > 1
-    selected = bots.first if selected.nil?
+    selected = bots.last if selected.nil?
 
     if selected && block_given?
       yield selected
