@@ -17,6 +17,11 @@ class BotMatchTest < Minitest::Test
     assert_equal true, match.reverse_resolves?
   end
 
+  def test_reverse_doesnt_resolve
+    match = Legitbot::BotMatch.new "5.140.70.64"
+    assert !match.reverse_resolves?
+  end
+
   def test_valid_class_syntax
     assert Legitbot::Google.valid?("66.249.64.141"), msg: "Valid Googlebot"
     assert Legitbot::Google.fake?("149.210.164.47"), msg: "Fake Googlebot"

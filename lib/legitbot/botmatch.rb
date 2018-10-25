@@ -17,26 +17,32 @@ module Legitbot
     # the reverse name
     def reverse_domain
       @reverse_domain ||= @dns.getname(@ip)
+    rescue Resolv::ResolvError
+      @reverse_domain ||= nil
     end
 
     ##
     # Returns a String with the reverse name
     def reverse_name
-      reverse_domain.to_s
+      reverse_domain&.to_s
     end
 
     ##
     # Returns a String with IP created from the reverse name
     def reversed_ip
+      return nil if reverse_name.nil?
+
       @reverse_ip ||= @dns.getaddress(reverse_name)
       @reverse_ip.to_s
     end
 
     def reverse_resolves?
-      reversed_ip == @ip
+      @ip == reversed_ip
     end
 
     def subdomain_of?(*domains)
+      return false if reverse_name.nil?
+
       domains.any? { |d|
         reverse_domain.subdomain_of? Resolv::DNS::Name.create(d)
       }
