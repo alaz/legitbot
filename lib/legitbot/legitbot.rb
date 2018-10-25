@@ -18,13 +18,13 @@ module Legitbot
         rule[:class].new(ip, resolver_config)
       }
 
-    bot = bots.select { |bot| bot.valid? }.first if bots.size > 1
-    bot = bots.first if bot.nil?
+    selected = bots.select { |b| b.valid? }.first if bots.size > 1
+    selected = bots.first if selected.nil?
 
-    if bot && block_given?
-      yield bot
+    if selected && block_given?
+      yield selected
     else
-      bot
+      selected
     end
   end
 
