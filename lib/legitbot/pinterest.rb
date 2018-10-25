@@ -9,5 +9,5 @@ module Legitbot
     end
   end
 
-  rule Legitbot::Pinterest, %w(Pinterestbot Pinterest)
+  rule Legitbot::Pinterest, %w(Pinterestbot Pinterest/0.2)
 end

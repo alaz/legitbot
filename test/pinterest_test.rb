@@ -30,6 +30,11 @@ class PinterestTest < Minitest::Test
     assert bot.valid?, msg: "Valid Pinterest"
   end
 
+  def test_android_not_bot
+    bot = Legitbot.bot("Mozilla/5.0 (Linux; Android 8.0.0; SM-G965F Build/R16NW; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.64 Mobile Safari/537.36 [Pinterest/Android]", "85.117.106.133")
+    assert_nil bot
+  end
+
   def test_engine_name
     bot = Legitbot.bot("Mozilla/5.0 (compatible; Pinterestbot/1.0; +https://www.pinterest.com/bot.html)", "54.236.1.11")
     assert_equal :pinterest, bot.detected_as
