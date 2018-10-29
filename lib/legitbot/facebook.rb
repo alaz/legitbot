@@ -36,5 +36,5 @@ module Legitbot
     end
   end
 
-  rule Legitbot::Facebook, %w(facebookhit facebookexternalhit)
+  rule Legitbot::Facebook, %w(Facebot facebookexternalhit/1.1)
 end
