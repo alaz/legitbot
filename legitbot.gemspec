@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.description = "A library to make sure a Web request has been "\
     "made by a real search engine, not a fake"
 
-  spec.required_ruby_version = '>= 2.0.0'
+  spec.required_ruby_version = '>= 2.3.0'
   spec.add_dependency "irrc", ">= 0.2.1"
   spec.add_dependency "segment_tree"
   spec.add_development_dependency "rake"
