@@ -62,3 +62,5 @@ Apache 2.0
 * Article [When (Fake) Googlebots Attack Your Rails App](http://jessewolgamott.com/blog/2015/11/17/when-fake-googlebots-attack-your-rails-app/)
 * [Voight-Kampff](https://github.com/biola/Voight-Kampff) is a Ruby gem that
   detects bots by `User-Agent`
+* [crawler_detect](https://github.com/loadkpi/crawler_detect) is a Ruby gem and Rack
+  middleware to detect crawlers by few different request headers, including `User-Agent`
