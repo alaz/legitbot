@@ -10,9 +10,9 @@ Gem::Specification.new do |spec|
   spec.author = "Alexander Azarov"
   spec.email = "self@alaz.me"
   spec.homepage = "https://github.com/alaz/legitbot"
-  spec.summary = %q{Validate Web request was made by legitimate search engine}
+  spec.summary = %q{Validate requests from Web crawlers: impersonating or not?}
   spec.description = "A library to make sure a Web request has been "\
-    "made by a real search engine, not a fake"
+    "made by a real search engine, not a malicious agent"
 
   spec.required_ruby_version = '>= 2.3.0'
   spec.add_dependency "irrc", ">= 0.2.1"
