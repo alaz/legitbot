@@ -24,13 +24,13 @@ module Legitbot
     end
 
     def self.load_ips
-      whois.transform_values do |records|
+      whois.map do |(family, records)|
         ranges = records.map do |cidr|
           range = IPAddr.new(cidr).to_range
           (range.begin.to_i..range.end.to_i)
         end
-        IntervalTree::Tree.new(ranges)
-      end
+        [family, IntervalTree::Tree.new(ranges)]
+      end.to_h
     end
 
     def self.whois
