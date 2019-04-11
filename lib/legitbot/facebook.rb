@@ -24,15 +24,21 @@ module Legitbot
     end
 
     def self.load_ips
+      w = whois
+
+      Hash[%i(ipv4 ipv6).map { |k|
+        [k, SegmentTree.new(w[k].map { |cidr|
+            [IPAddr.new(cidr).to_range, true]
+          })]
+      }]
+    end
+
+    def self.whois
       client = Irrc::Client.new
       client.query :radb, AS
       results = client.perform
 
-      Hash[%i(ipv4 ipv6).map { |k|
-        [k, SegmentTree.new(results[AS][k][AS].map { |cidr|
-            [IPAddr.new(cidr).to_range, true]
-          })]
-      }]
+      { ipv4: results[AS][:ipv4][AS], ipv6: results[AS][:ipv6][AS] }
     end
   end
 
