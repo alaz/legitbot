@@ -41,7 +41,6 @@ module Legitbot
       %i(ipv4 ipv6).map do |family|
         [family, results[AS][family][AS]]
       end.to_h
-      # { ipv4: results[AS][:ipv4][AS], ipv6: results[AS][:ipv6][AS] }
     end
   end
 
