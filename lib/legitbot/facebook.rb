@@ -1,6 +1,6 @@
 require 'ipaddr'
 require 'irrc'
-require 'segment_tree'
+require 'interval_tree'
 
 module Legitbot
   # https://developers.facebook.com/docs/sharing/webmasters/crawler
@@ -10,7 +10,7 @@ module Legitbot
 
     def valid?
       ip = IPAddr.new(@ip)
-      Facebook.valid_ips[ip.ipv4? ? :ipv4 : :ipv6].find(ip)
+      Facebook.valid_ips[ip.ipv4? ? :ipv4 : :ipv6].search(ip.to_i).size > 0
     end
 
     @mutex = Mutex.new
@@ -24,15 +24,24 @@ module Legitbot
     end
 
     def self.load_ips
+      whois.map do |(family, records)|
+        ranges = records.map do |cidr|
+          range = IPAddr.new(cidr).to_range
+          (range.begin.to_i..range.end.to_i)
+        end
+        [family, IntervalTree::Tree.new(ranges)]
+      end.to_h
+    end
+
+    def self.whois
       client = Irrc::Client.new
       client.query :radb, AS
       results = client.perform
 
-      Hash[%i(ipv4 ipv6).map { |k|
-        [k, SegmentTree.new(results[AS][k][AS].map { |cidr|
-            [IPAddr.new(cidr).to_range, true]
-          })]
-      }]
+      %i(ipv4 ipv6).map do |family|
+        [family, results[AS][family][AS]]
+      end.to_h
+      # { ipv4: results[AS][:ipv4][AS], ipv6: results[AS][:ipv6][AS] }
     end
   end
 
