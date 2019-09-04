@@ -1,9 +1,10 @@
 require 'rubygems'
 require 'bundler'
-
+require 'bump/tasks'
+require "rake/testtask"
 Bundler::GemHelper.install_tasks
 
-require "rake/testtask"
+Bump.tag_by_default = true
 
 Rake::TestTask.new do |t|
   t.libs << "test"
