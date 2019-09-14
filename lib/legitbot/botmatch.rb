@@ -14,17 +14,23 @@ module Legitbot
 
     ##
     # Returns a Resolv::DNS::Name instance with
-    # the reverse name
-    def reverse_domain
-      @reverse_domain ||= @dns.getname(@ip)
+    # the reverse names
+    def reverse_domains
+      @reverse_domains ||= @dns.getnames(@ip)
     rescue Resolv::ResolvError
-      @reverse_domain ||= nil
+      @reverse_domains ||= nil
     end
 
     ##
-    # Returns a String with the reverse name
+    # Returns a String with the first reverse name
     def reverse_name
-      reverse_domain&.to_s
+      reverse_domains&.first&.to_s
+    end
+
+    ##
+    # Returns an array of Strings with all available reverse names
+    def reverse_names
+      reverse_domains.map { |d| d.to_s }
     end
 
     ##
@@ -36,15 +42,36 @@ module Legitbot
       @reverse_ip.to_s
     end
 
+    ##
+    # Returns an Array of String with IP created from the reverse name
+    def reversed_ips
+      return [] if reverse_names.empty?
+      reverse_ips = []
+
+      reverse_names.each { |rev_name|
+        @dns.getaddresses(rev_name).each { |addr|
+          reverse_ips.push addr.to_s
+        }
+      }
+
+      return reverse_ips
+    end
+
     def reverse_resolves?
       @ip == reversed_ip
     end
 
+    def reverses_resolve?
+      reversed_ips.include? @ip
+    end
+
     def subdomain_of?(*domains)
-      return false if reverse_name.nil?
+      return false if reverse_names.empty?
 
       domains.any? { |d|
-        reverse_domain.subdomain_of? Resolv::DNS::Name.create(d)
+        reverse_domains.any? { |reverse_domain|
+          reverse_domain.subdomain_of? Resolv::DNS::Name.create(d)
+        }
       }
     end
 
