@@ -8,7 +8,7 @@ Bump.tag_by_default = true
 
 Rake::TestTask.new do |t|
   t.libs << "test"
-  t.test_files = FileList['test/*_test.rb']
+  t.test_files = FileList['test/legitbot/**/*_test.rb']
   t.warning = true
   t.verbose = true
 end

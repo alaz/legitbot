@@ -1,6 +1,8 @@
 require 'resolv'
 require 'ipaddr'
 
+require_relative 'validators/ip_ranges'
+
 module Legitbot
   ##
   # Represents a bot instance match. Typical methods are
