@@ -12,7 +12,6 @@ module Legitbot
     module IpRanges
       class << self
         def included(base)
-          base.instance_variable_set(:@ip_loader_mutex, Mutex.new)
           base.extend ClassMethods
         end
       end
@@ -26,8 +25,9 @@ module Legitbot
         EMPTY_GENERATOR = proc { [] }
 
         def ip_ranges(*ips, &block)
-          @ip_ranges = partition_ips(ips) unless ips.empty?
+          @ip_ranges = partition_ips(ips.flatten) unless ips.empty?
           @ip_ranges_loader = block_given? ? block : EMPTY_GENERATOR
+          @ip_loader_mutex = Mutex.new
         end
 
         def check_ranges?

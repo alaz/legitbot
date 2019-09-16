@@ -26,7 +26,7 @@ module Legitbot
         include Legitbot::Config::Resolver
 
         def domains(*list, reverse: true)
-          @valid_domains = list.map { |d| Resolv::DNS::Name.create(d) }
+          @valid_domains = list.flatten.map { |d| Resolv::DNS::Name.create(d) }
           @validate_reverse_record = reverse
         end
 
@@ -63,7 +63,7 @@ module Legitbot
         def reverse_ip(record)
           return nil if record.nil?
 
-          resolver.getaddress(record.to_s)
+          resolver.getaddress(record.to_s).to_s
         end
       end
     end

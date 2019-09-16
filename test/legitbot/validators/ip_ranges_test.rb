@@ -14,6 +14,11 @@ module Legitbot
       ip_ranges '66.220.144.0/21', '2a03:2880:f234::/48'
     end
 
+    class FlattenRanges
+      include IpRanges
+      ip_ranges %w[66.220.144.0/21 2a03:2880:f234::/48]
+    end
+
     class EmptyRanges
       include IpRanges
       ip_ranges
@@ -79,6 +84,13 @@ module Legitbot
         assert ArrayRanges.valid_ip?('2a03:2880:f234:0:0:0:0:1')
         refute ArrayRanges.valid_ip?('66.220.143.1')
         refute ArrayRanges.valid_ip?('2a03:2880:f233:0:0:0:0:1')
+      end
+
+      def test_flatten
+        assert FlattenRanges.valid_ip?('66.220.144.1')
+        assert FlattenRanges.valid_ip?('2a03:2880:f234:0:0:0:0:1')
+        refute FlattenRanges.valid_ip?('66.220.143.1')
+        refute FlattenRanges.valid_ip?('2a03:2880:f233:0:0:0:0:1')
       end
 
       # rubocop:disable Metrics/AbcSize

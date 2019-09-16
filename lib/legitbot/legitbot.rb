@@ -1,5 +1,13 @@
+# frozen_string_literal: true
+
+##
+# Bot lookup based on user agent
 module Legitbot
   @rules = []
+
+  class << self
+    attr_accessor :resolver_config
+  end
 
   ##
   # Lookup a bot based on its signature from +User-Agent+ header.
@@ -10,15 +18,12 @@ module Legitbot
   # otherwise.
   # :yields: a found bot
   #
-  def self.bot(userAgent, ip, resolver_config = nil)
-    bots =
-      @rules.select { |rule|
-        rule[:fragments].any? {|f| userAgent.index f}
-      }.map { |rule|
-        rule[:class].new(ip, resolver_config)
-      }
+  def self.bot(user_agent, ip)
+    bots = @rules
+           .select { |rule| rule[:fragments].any? { |f| user_agent.index f } }
+           .map { |rule| rule[:class].new(ip) }
 
-    selected = bots.select { |b| b.valid? }.first if bots.size > 1
+    selected = bots.select(&:valid?).first if bots.size > 1
     selected = bots.last if selected.nil?
 
     if selected && block_given?
@@ -29,6 +34,6 @@ module Legitbot
   end
 
   def self.rule(clazz, fragments)
-    @rules << {:class => clazz, :fragments => fragments}
+    @rules << { class: clazz, fragments: fragments }
   end
 end

@@ -1,13 +1,10 @@
-module Legitbot
+# frozen_string_literal: true
+
+module Legitbot # :nodoc:
   # https://help.pinterest.com/en/articles/about-pinterest-crawler-0
-
   class Pinterest < BotMatch
-    ValidDomains = ["pinterest.com."]
-
-    def valid?
-      subdomain_of?(*Pinterest::ValidDomains) && reverse_resolves?
-    end
+    domains 'pinterest.com.'
   end
 
-  rule Legitbot::Pinterest, %w(Pinterestbot Pinterest/0.2)
+  rule Legitbot::Pinterest, %w[Pinterestbot Pinterest/0.2]
 end

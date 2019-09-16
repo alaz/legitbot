@@ -1,6 +1,7 @@
-require 'resolv'
-require 'ipaddr'
+# frozen_string_literal: true
 
+require_relative 'config/resolver'
+require_relative 'validators/domains'
 require_relative 'validators/ip_ranges'
 
 module Legitbot
@@ -9,61 +10,31 @@ module Legitbot
   # +valid?+, +fake?+ and +detected_as+
   #
   class BotMatch
-    def initialize(ip, resolver_config = nil)
-      @dns = Resolv::DNS.new(resolver_config)
+    include Legitbot::Validators::IpRanges
+    include Legitbot::Validators::Domains
+
+    def initialize(ip)
       @ip = ip
-    end
-
-    ##
-    # Returns a Resolv::DNS::Name instance with
-    # the reverse name
-    def reverse_domain
-      @reverse_domain ||= @dns.getname(@ip)
-    rescue Resolv::ResolvError
-      @reverse_domain ||= nil
-    end
-
-    ##
-    # Returns a String with the reverse name
-    def reverse_name
-      reverse_domain&.to_s
-    end
-
-    ##
-    # Returns a String with IP created from the reverse name
-    def reversed_ip
-      return nil if reverse_name.nil?
-
-      @reverse_ip ||= @dns.getaddress(reverse_name)
-      @reverse_ip.to_s
-    end
-
-    def reverse_resolves?
-      @ip == reversed_ip
-    end
-
-    def subdomain_of?(*domains)
-      return false if reverse_name.nil?
-
-      domains.any? { |d|
-        reverse_domain.subdomain_of? Resolv::DNS::Name.create(d)
-      }
     end
 
     def detected_as
       self.class.name.split('::').last.downcase.to_sym
     end
 
+    def valid?
+      valid_ip? && valid_domain?
+    end
+
     def fake?
       !valid?
     end
 
-    def self.valid?(ip, resolver_config = nil)
-      self.new(ip, resolver_config).valid?
+    def self.valid?(ip)
+      new(ip).valid?
     end
 
-    def self.fake?(ip, resolver_config = nil)
-      self.new(ip, resolver_config).fake?
+    def self.fake?(ip)
+      new(ip).fake?
     end
   end
 end

@@ -10,7 +10,7 @@ module Legitbot
       end
 
       def resolver
-        @resolver_config ||= nil
+        @resolver_config ||= Legitbot.resolver_config
         @resolver ||= Resolv::DNS.new @resolver_config
       end
     end
