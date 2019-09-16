@@ -8,5 +8,5 @@ module Legitbot
     end
   end
 
-  rule Legitbot::DuckDuckGo, %w(DuckDuckGo)
+  rule Legitbot::DuckDuckGo, %w(DuckDuckBot)
 end
