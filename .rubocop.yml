@@ -1,0 +1,8 @@
+AllCops:
+  Include:
+    - '**/Gemfile'
+    - '**/Rakefile'
+    - 'lib/**/*.rb'
+    - 'test/**/*.rb'
+  Exclude:
+    - 'pkg/**'

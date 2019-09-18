@@ -1,12 +1,10 @@
-module Legitbot
+# frozen_string_literal: true
+
+module Legitbot # :nodoc:
   # http://help.baidu.com/question?prod_en=master&class=498&id=1000973
   class Baidu < BotMatch
-    ValidDomains = ["baidu.com.", "baidu.jp."]
-
-    def valid?
-      subdomain_of?(*Baidu::ValidDomains)
-    end
+    domains 'baidu.com.', 'baidu.jp.', reverse: false
   end
 
-  rule Legitbot::Baidu, %w(Baiduspider)
+  rule Legitbot::Baidu, %w[Baiduspider]
 end
