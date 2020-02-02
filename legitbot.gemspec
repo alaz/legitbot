@@ -12,8 +12,7 @@ Gem::Specification.new do |spec|
   spec.email = 'self@alaz.me'
   spec.homepage = 'https://github.com/alaz/legitbot'
   spec.summary = 'Validate requests from Web crawlers: impersonating or not?'
-  spec.description = 'A library to make sure a Web request has been '\
-    'made by a real search engine, not a malicious agent'
+  spec.description = 'Does Web request come from a real search engine or from an impersonating agent?'
 
   spec.required_ruby_version = '>= 2.3.0'
   spec.add_dependency 'augmented_interval_tree', '~> 0.1', '>= 0.1.1'
