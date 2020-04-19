@@ -4,6 +4,8 @@ module Legitbot # :nodoc:
   # https://duckduckgo.com/duckduckbot
   class DuckDuckGo < BotMatch
     ip_ranges %w[
+      23.21.227.69
+      40.88.21.235
       50.16.241.113
       50.16.241.114
       50.16.241.117
@@ -12,7 +14,8 @@ module Legitbot # :nodoc:
       52.5.190.19
       54.197.234.188
       54.208.100.253
-      23.21.227.69
+      54.208.102.37
+      107.21.1.8
     ]
   end
 
