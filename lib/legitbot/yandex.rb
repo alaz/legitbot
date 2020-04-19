@@ -7,27 +7,40 @@ module Legitbot # :nodoc:
   end
 
   rule Legitbot::Yandex, %w[
-    YandexBot
     YandexAccessibilityBot
-    YandexMobileBot
+    YandexAdNet
+    YandexBlogs
+    YandexBot/
+    YandexCalendar
+    YandexDirect/
     YandexDirectDyn
-    YandexScreenshotBot
+    YandexFavicons
+    YaDirectFetcher
+    YandexForDomain
     YandexImages
+    YandexImageResizer
+    YandexMobileBot
+    YandexMarket
+    YandexMedia
+    YandexMetrika
+    YandexMobileScreenShotBot
+    YandexNews
+    YandexOntoDB
+    YandexOntoDBAPI
+    YandexPagechecker
+    YandexPartner
+    YandexRCA
+    YandexSearchShop
+    YandexSitelinks
+    YandexSpravBot
+    YandexTracker
+    YandexTurbo
+    YandexVertis
+    YandexVerticals
     YandexVideo
     YandexVideoParser
-    YandexMedia
-    YandexBlogs
-    YandexFavicons
     YandexWebmaster
-    YandexPagechecker
-    YandexImageResizer
-    YaDirectFetcher
-    YandexCalendar
-    YandexSitelinks
-    YandexMetrika
-    YandexNews
-    YandexVertis
-    YandexSearchShop
-    YandexVerticals
+    YandexScreenshotBot
+    YandexMedianaBot
   ]
 end
