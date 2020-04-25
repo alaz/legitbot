@@ -1,10 +1,2 @@
 AllCops:
-  TargetRubyVersion: 2.4
-  Include:
-    - '**/*.gemspec'
-    - '**/Gemfile'
-    - '**/Rakefile'
-    - 'lib/**/*.rb'
-    - 'test/**/*.rb'
-  Exclude:
-    - 'pkg/**'
+  CacheRootDirectory: 'vendor'
