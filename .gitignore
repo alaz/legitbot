@@ -4,3 +4,4 @@ Gemfile.lock
 *.gemfile.lock
 /pkg
 /tags
+/vendor
