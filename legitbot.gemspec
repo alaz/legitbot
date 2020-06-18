@@ -3,7 +3,6 @@
 $LOAD_PATH.push File.expand_path('lib', __dir__)
 require 'legitbot/version'
 
-# rubocop:disable Layout/LineLength
 Gem::Specification.new do |spec|
   spec.name = 'legitbot'
   spec.version = Legitbot::VERSION
@@ -27,4 +26,3 @@ Gem::Specification.new do |spec|
   spec.rdoc_options = ['--charset=UTF-8']
   spec.test_files = Dir.glob('test/**/*')
 end
-# rubocop:enable Layout/LineLength
