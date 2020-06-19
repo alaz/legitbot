@@ -67,3 +67,8 @@ Apache 2.0
   detects bots by `User-Agent`
 * [crawler_detect](https://github.com/loadkpi/crawler_detect) is a Ruby gem and Rack
   middleware to detect crawlers by few different request headers, including `User-Agent`
+* Project Honeypot's
+  [http:BL](https://www.projecthoneypot.org/httpbl_api.php) can not only
+  classify IP as a search engine, but also label them as suspicious and
+  reports the number of days since the last activity. My implementation of
+  the protocol in Scala is [here](https://github.com/osinka/httpbl).
