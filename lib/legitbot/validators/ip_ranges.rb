@@ -59,22 +59,26 @@ module Legitbot
           partition_ips(@ip_ranges_loader.call)
         end
 
-        # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         def partition_ips(ips)
-          return [] if ips.empty?
+          return [] unless ips&.any?
 
           ips
             .map { |cidr| IPAddr.new(cidr) }
             .partition(&:ipv4?)
             .each_with_index
             .map do |list, index|
-              ranges = list.map(&:to_range).map do |r|
-                (r.begin.to_i..r.end.to_i)
-              end
-              [FAMILIES[index], IntervalTree::Tree.new(ranges)]
+              [FAMILIES[index], build_interval_tree(list)]
             end.to_h
         end
-        # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
+
+        private
+
+        def build_interval_tree(list)
+          ranges = list.map(&:to_range).map do |r|
+            (r.begin.to_i..r.end.to_i)
+          end
+          IntervalTree::Tree.new(ranges)
+        end
       end
     end
   end

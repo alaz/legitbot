@@ -46,6 +46,11 @@ module Legitbot
       end
     end
 
+    class NilRanges
+      include IpRanges
+      ip_ranges { nil }
+    end
+
     class IpRangesTest < Minitest::Test
       def test_partition_method
         empty = NoRanges.partition_ips([])
@@ -108,6 +113,10 @@ module Legitbot
         assert_equal 2, LoadRanges.counter
       end
       # rubocop:enable Metrics/AbcSize
+
+      def test_nil_ranges
+        assert NilRanges.valid_ip?('127.0.0.1')
+      end
     end
   end
 end
