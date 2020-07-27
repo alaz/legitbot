@@ -18,6 +18,7 @@ module Legitbot
   # otherwise.
   # :yields: a found bot
   #
+  # rubocop:disable Metrics/CyclomaticComplexity
   def self.bot(user_agent, ip)
     bots = @rules
            .select { |rule| rule[:fragments].any? { |f| user_agent.index f } }
@@ -32,6 +33,7 @@ module Legitbot
       selected
     end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
 
   def self.rule(clazz, fragments)
     @rules << { class: clazz, fragments: fragments }
