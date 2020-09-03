@@ -44,6 +44,7 @@ end
 ## Supported
 
 * [Ahrefs](https://ahrefs.com/robot)
+* [Alexa](https://support.alexa.com/hc/en-us/articles/360046707834-What-are-the-IP-addresses-for-Alexa-s-Certify-and-Site-Audit-crawlers-)
 * [Applebot](https://support.apple.com/en-us/HT204683)
 * [Baidu spider](http://help.baidu.com/question?prod_en=master&class=498&id=1000973)
 * [Bingbot](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot/)
