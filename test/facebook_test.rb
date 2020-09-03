@@ -33,7 +33,7 @@ class FacebookTest < Minitest::Test
     assert match.fake?, msg: "#{ip} is a fake Facebook IP"
   end
 
-  # rubocop:disable Metrics/AbcSize, Layout/LineLength, Metrics/MethodLength
+  # rubocop:disable Layout/LineLength, Metrics/MethodLength
   def test_user_agent
     Legitbot.bot(
       'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)',
@@ -59,5 +59,5 @@ class FacebookTest < Minitest::Test
       assert bot.fake?, msg: 'fake Facebook'
     end
   end
-  # rubocop:enable Metrics/AbcSize, Layout/LineLength, Metrics/MethodLength
+  # rubocop:enable Layout/LineLength, Metrics/MethodLength
 end
