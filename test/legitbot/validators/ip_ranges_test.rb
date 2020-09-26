@@ -51,6 +51,11 @@ module Legitbot
       ip_ranges { nil }
     end
 
+    class Ipv4Ranges
+      include IpRanges
+      ip_ranges { ['66.220.144.0/21'] }
+    end
+
     class IpRangesTest < Minitest::Test
       def test_partition_method
         empty = NoRanges.partition_ips([])
@@ -116,6 +121,10 @@ module Legitbot
 
       def test_nil_ranges
         assert NilRanges.valid_ip?('127.0.0.1')
+      end
+
+      def test_ipv4_only_ranges
+        refute Ipv4Ranges.valid_ip?('2a03:2880:f234:0:0:0:0:1')
       end
     end
   end
