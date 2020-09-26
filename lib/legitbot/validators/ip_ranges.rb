@@ -40,7 +40,7 @@ module Legitbot
 
           obj = IPAddr.new(ip)
           ranges = valid_ips[obj.ipv4? ? :ipv4 : :ipv6].search(obj.to_i)
-          !ranges.empty?
+          !ranges.nil? && !ranges.empty?
         end
 
         def valid_ips
