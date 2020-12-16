@@ -1,4 +1,4 @@
-# Legitbot ![](https://github.com/alaz/legitbot/workflows/build/badge.svg) [![Gem Version](https://badge.fury.io/rb/legitbot.svg)](https://badge.fury.io/rb/legitbot)
+# Legitbot ![](https://github.com/alaz/legitbot/workflows/build/badge.svg) ![](https://badge.fury.io/rb/legitbot.svg)
 
 Ruby gem to check that an IP belongs to a bot, typically a search
 engine. This can be of help in protecting a web site from fake search
