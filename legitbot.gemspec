@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.summary = 'Validate requests from Web crawlers: impersonating or not?'
   spec.description = 'Does Web request come from a real search engine or from an impersonating agent?'
 
-  spec.required_ruby_version = '>= 2.4.0'
+  spec.required_ruby_version = '>= 2.5.0'
   spec.add_dependency 'augmented_interval_tree', '~> 0.1', '>= 0.1.1'
   spec.add_dependency 'irrc', '~> 0.2', '>= 0.2.1'
   spec.add_development_dependency 'bump', '~> 0.8', '>= 0.8.0'
