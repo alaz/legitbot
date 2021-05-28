@@ -14,13 +14,13 @@ Gem::Specification.new do |spec|
   spec.summary = 'Validate requests from Web crawlers: impersonating or not?'
   spec.description = 'Does Web request come from a real search engine or from an impersonating agent?'
 
-  spec.required_ruby_version = '>= 2.4.0'
+  spec.required_ruby_version = '>= 2.5.0'
   spec.add_dependency 'augmented_interval_tree', '~> 0.1', '>= 0.1.1'
   spec.add_dependency 'irrc', '~> 0.2', '>= 0.2.1'
   spec.add_development_dependency 'bump', '~> 0.8', '>= 0.8.0'
   spec.add_development_dependency 'minitest', '~> 5.1', '>= 5.1.0'
   spec.add_development_dependency 'rake', '~> 13.0', '>= 13.0.0'
-  spec.add_development_dependency 'rubocop', '~> 0.92.0', '>= 0.92.0'
+  spec.add_development_dependency 'rubocop', '~> 1.15.0', '>= 1.15.0'
 
   spec.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   spec.rdoc_options = ['--charset=UTF-8']

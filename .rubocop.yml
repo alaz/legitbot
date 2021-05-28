@@ -1,3 +1,10 @@
 AllCops:
   CacheRootDirectory: 'vendor'
   NewCops: enable
+  SuggestExtensions: false
+
+Gemspec/RequiredRubyVersion:
+  Enabled: false
+
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
