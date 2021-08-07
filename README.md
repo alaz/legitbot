@@ -1,13 +1,11 @@
 # Legitbot ![](https://github.com/alaz/legitbot/workflows/build/badge.svg) ![](https://badge.fury.io/rb/legitbot.svg)
 
-Ruby gem to check that an IP belongs to a bot, typically a search
-engine. This can be of help in protecting a web site from fake search
-engines.
+Ruby gem to make sure that an IP really belongs to a bot, typically a search
+engine.
 
 ## Usage
 
-Suppose you have a Web request and you'd like to make sure it's not from a fake
-search engine:
+Suppose you have a Web request and you would like to check it is not diguised:
 
 ```ruby
 bot = Legitbot.bot(userAgent, ip)
@@ -22,7 +20,7 @@ bot.valid? # => true
 bot.fake? # => false
 ```
 
-Sometimes you already know what search engine to expect. For example, you might
+Sometimes you already know which search engine to expect. For example, you might
 be using [rack-attack](https://github.com/kickstarter/rack-attack):
 
 ```ruby
@@ -31,8 +29,8 @@ Rack::Attack.blocklist("fake Googlebot") do |req|
 end
 ```
 
-Or if you do not like all these nasty crawlers stealing your content or
-maybe evaluating it and getting ready to invade your site with spammers,
+Or if you do not like all those ghoulish crawlers stealing your
+content, evaluating it and getting ready to invade your site with spammers,
 then block them all:
 
 ```ruby
