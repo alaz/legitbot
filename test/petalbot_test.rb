@@ -11,7 +11,7 @@ class PetalbotTest < Minitest::Test
   end
 
   def test_valid_ip
-    ip = '114.119.153.50'
+    ip = '114.119.128.10'
     match = Legitbot::Petalbot.new ip
     assert match.valid?, msg: "#{ip} is a valid Petalbot IP"
   end
@@ -28,7 +28,7 @@ class PetalbotTest < Minitest::Test
   def test_valid_ua
     bot = Legitbot.bot(
       'Mozilla/5.0 (compatible;PetalBot; +https://aspiegel.com/petalbot)',
-      '114.119.153.50'
+      '114.119.128.10'
     )
     assert bot, msg: 'Petalbot detected from User-Agent'
     assert bot.valid?, msg: 'Valid Petalbot'
