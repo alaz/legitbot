@@ -50,10 +50,10 @@ end
 * [Facebook crawler](https://developers.facebook.com/docs/sharing/webmasters/crawler)
 * [Google crawlers](https://support.google.com/webmasters/answer/1061943)
 * [Oracle Data Cloud Crawler](https://www.oracle.com/corporate/acquisitions/grapeshot/crawler.html)
+* [Petal search engine](http://aspiegel.com/petalbot)
 * [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
 * [Twitterbot](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started), the list of IPs is in the [Troubleshooting page](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/troubleshooting-cards)
 * [Yandex robots](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
-* [Petal search engine](http://aspiegel.com/petalbot)
 
 ## License
 
