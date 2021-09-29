@@ -18,5 +18,8 @@ module Legitbot # :nodoc:
     end
   end
 
-  rule Legitbot::Facebook, %w[Facebot facebookexternalhit/1.1]
+  rule Legitbot::Facebook, %w[
+    facebookexternalhit/1.1
+    facebookcatalog/1.0
+  ]
 end
