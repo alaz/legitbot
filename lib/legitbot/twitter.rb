@@ -7,6 +7,7 @@ module Legitbot # :nodoc:
     ip_ranges %w[
       199.16.156.0/22
       199.59.148.0/22
+      192.133.76.0/22
     ]
   end
 
