@@ -7,5 +7,13 @@ module Legitbot # :nodoc:
     domains 'google.com.', 'googlebot.com.'
   end
 
-  rule Legitbot::Google, %w[Googlebot Mediapartners-Google AdsBot-Google]
+  rule Legitbot::Google, %w[
+    APIs-Google
+    AdsBot-Google-Mobile
+    AdsBot-Google
+    Googlebot
+    Mediapartners-Google
+    AdsBot-Google-Mobile-Apps
+    FeedFetcher-Google
+  ]
 end
