@@ -39,6 +39,13 @@ Rack::Attack.blocklist 'fake search engines' do |request|
 end
 ```
 
+## Versioning
+
+[Semantic versioning](https://semver.org/) with the following clarifications:
+
+* MINOR version is incremented when support for new bots is added.
+* PATCH version is incremented when validation logic for a bot changes (IP list updated, for example).
+
 ## Supported
 
 * [Ahrefs](https://ahrefs.com/robot)
