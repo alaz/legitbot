@@ -67,7 +67,7 @@ end
 
 Apache 2.0
 
-## References
+## Other projects
 
 * Play Framework variant in Scala: [play-legitbot](https://github.com/osinka/play-legitbot)
 * Article [When (Fake) Googlebots Attack Your Rails App](http://jessewolgamott.com/blog/2015/11/17/when-fake-googlebots-attack-your-rails-app/)
@@ -80,3 +80,5 @@ Apache 2.0
   classify IP as a search engine, but also label them as suspicious and
   reports the number of days since the last activity. My implementation of
   the protocol in Scala is [here](https://github.com/osinka/httpbl).
+* [CIDRAM](https://github.com/CIDRAM/CIDRAM) is a PHP routing manager with built-in support
+  to validate bots.
