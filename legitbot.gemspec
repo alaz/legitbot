@@ -13,6 +13,9 @@ Gem::Specification.new do |spec|
   spec.homepage = 'https://github.com/alaz/legitbot'
   spec.summary = 'Validate requests from Web crawlers: impersonating or not?'
   spec.description = 'Does Web request come from a real search engine or from an impersonating agent?'
+  spec.metadata = {
+    'rubygems_mfa_required' => 'true'
+  }
 
   spec.required_ruby_version = '>= 2.5.0'
   spec.add_dependency 'augmented_interval_tree', '~> 0.1', '>= 0.1.1'
