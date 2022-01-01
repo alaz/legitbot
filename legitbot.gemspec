@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bump', '~> 0.8', '>= 0.8.0'
   spec.add_development_dependency 'minitest', '~> 5.1', '>= 5.1.0'
   spec.add_development_dependency 'rake', '~> 13.0', '>= 13.0.0'
-  spec.add_development_dependency 'rubocop', '~> 1.22.0', '>= 1.22.0'
+  spec.add_development_dependency 'rubocop', '~> 1.24.0', '>= 1.24.0'
 
   spec.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   spec.rdoc_options = ['--charset=UTF-8']
