@@ -8,3 +8,6 @@ Gemspec/RequiredRubyVersion:
 
 Naming/MemoizedInstanceVariableName:
   Enabled: false
+
+Style/MapToHash:
+  Enabled: false
