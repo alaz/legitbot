@@ -1,5 +1,6 @@
 require:
-- rubocop-minitest
+  - rubocop-minitest
+  - rubocop/cop/custom
 
 AllCops:
   CacheRootDirectory: 'vendor'
@@ -14,3 +15,6 @@ Naming/MemoizedInstanceVariableName:
 
 Style/MapToHash:
   Enabled: false
+
+Custom/IpRanges:
+  Enabled: true
