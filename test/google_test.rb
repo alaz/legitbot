@@ -7,13 +7,13 @@ class GoogleTest < Minitest::Test
   def test_malicious_ip
     ip = '149.210.164.47'
     match = Legitbot::Google.new ip
-    assert !match.valid?, msg: "#{ip} is not a real Googlebot IP"
+    refute match.valid?
   end
 
   def test_valid_ip
     ip = '66.249.64.141'
     match = Legitbot::Google.new ip
-    assert match.valid?, msg: "#{ip} is a valid Googlebot IP"
+    assert match.valid?
   end
 
   def test_malicious_ua
@@ -21,8 +21,8 @@ class GoogleTest < Minitest::Test
       'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
       '149.210.164.47'
     )
-    assert bot, msg: 'Googlebot detected from User-Agent'
-    assert !bot.valid?, msg: 'Not a valid Googlebot'
+    assert bot
+    refute bot.valid?
   end
 
   def test_valid_ua
@@ -30,8 +30,8 @@ class GoogleTest < Minitest::Test
       'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
       '66.249.64.141'
     )
-    assert bot, msg: 'Googlebot detected from User-Agent'
-    assert bot.valid?, msg: 'Valid Googlebot'
+    assert bot
+    assert bot.valid?
   end
 
   def test_valid_name

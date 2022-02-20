@@ -7,13 +7,13 @@ class AmazonTest < Minitest::Test
   def test_malicious_ip
     ip = '149.210.164.47'
     match = Legitbot::Amazon.new ip
-    assert !match.valid?, msg: "#{ip} is not a real AmazonAdBot IP"
+    refute match.valid?
   end
 
   def test_valid_ip
     ip = '54.166.7.90'
     match = Legitbot::Amazon.new ip
-    assert match.valid?, msg: "#{ip} is a valid AmazonAdBot IP"
+    assert match.valid?
   end
 
   def test_malicious_ua
@@ -21,8 +21,8 @@ class AmazonTest < Minitest::Test
       'Mozilla/5.0 (compatible; AmazonAdBot/1.0; +https://adbot.amazon.com)',
       '149.210.164.47'
     )
-    assert bot, msg: 'AmazonAdBot detected from User-Agent'
-    assert !bot.valid?, msg: 'Not a valid AmazonAdBot'
+    assert bot
+    refute bot.valid?
   end
 
   def test_valid_ua
@@ -30,8 +30,8 @@ class AmazonTest < Minitest::Test
       'Mozilla/5.0 (compatible; AmazonAdBot/1.0; +https://adbot.amazon.com)',
       '54.166.7.90'
     )
-    assert bot, msg: 'AmazonAdBot detected from User-Agent'
-    assert bot.valid?, msg: 'Valid AmazonAdBot'
+    assert bot
+    assert bot.valid?
   end
 
   def test_valid_name
