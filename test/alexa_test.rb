@@ -7,13 +7,13 @@ class AlexaTest < Minitest::Test
   def test_malicious_ip
     ip = '149.210.164.47'
     match = Legitbot::Alexa.new ip
-    assert !match.valid?, msg: "#{ip} is not a real Alexa IP"
+    refute match.valid?
   end
 
   def test_valid_ip
     ip = '52.86.176.3'
     match = Legitbot::Alexa.new ip
-    assert match.valid?, msg: "#{ip} is a valid Alexa IP"
+    assert match.valid?
   end
 
   def test_malicious_ua
@@ -21,8 +21,8 @@ class AlexaTest < Minitest::Test
       'Mozilla/5.0 (compatible; Alexabot/1.0; +http://www.alexa.com/help/certifyscan; certifyscan@alexa.com)',
       '149.210.164.47'
     )
-    assert bot, msg: 'Alexa detected from User-Agent'
-    assert !bot.valid?, msg: 'Not a valid Alexa'
+    assert bot
+    refute bot.valid?
   end
 
   def test_valid_ua
@@ -30,7 +30,7 @@ class AlexaTest < Minitest::Test
       'Mozilla/5.0 (compatible; Alexabot/1.0; +http://www.alexa.com/help/certifyscan; certifyscan@alexa.com)',
       '52.86.176.3'
     )
-    assert bot, msg: 'Alexa detected from User-Agent'
-    assert bot.valid?, msg: 'Valid Alexa'
+    assert bot
+    assert bot.valid?
   end
 end

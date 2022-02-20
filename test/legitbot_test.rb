@@ -5,10 +5,8 @@ require 'legitbot'
 
 class LegitbotTest < Minitest::Test
   def test_rules
-    assert !Legitbot.bot('Firefox', '127.0.0.1'),
-           msg: 'Not a bot'
-    assert Legitbot.bot('Googlebot', '5.140.70.64'),
-           msg: 'No reverse resolve, bot'
+    refute Legitbot.bot('Firefox', '127.0.0.1')
+    assert Legitbot.bot('Googlebot', '5.140.70.64')
 
     Legitbot.bot('Firefox', '127.0.0.1') do |_bot|
       flunk 'No bot Firefox is possible'

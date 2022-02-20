@@ -4,6 +4,7 @@ require 'minitest/autorun'
 require 'legitbot'
 
 module Legitbot
+  # rubocop:disable Minitest/MultipleAssertions
   module Validators
     class NoRanges
       include IpRanges
@@ -128,4 +129,5 @@ module Legitbot
       end
     end
   end
+  # rubocop:enable Minitest/MultipleAssertions
 end

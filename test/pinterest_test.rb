@@ -7,13 +7,13 @@ class PinterestTest < Minitest::Test
   def test_malicious_ip
     ip = '149.210.164.47'
     match = Legitbot::Pinterest.new ip
-    assert !match.valid?, msg: "#{ip} is not a real Pinterest IP"
+    refute match.valid?
   end
 
   def test_valid_ip
     ip = '54.236.1.11'
     match = Legitbot::Pinterest.new ip
-    assert match.valid?, msg: "#{ip} is a valid Pinterest IP"
+    assert match.valid?
   end
 
   def test_malicious_ua
@@ -21,8 +21,8 @@ class PinterestTest < Minitest::Test
       'Mozilla/5.0 (compatible; Pinterestbot/1.0; +https://www.pinterest.com/bot.html)',
       '149.210.164.47'
     )
-    assert bot, msg: 'Pinterest detected from User-Agent'
-    assert !bot.valid?, msg: 'Not a valid Pinterest'
+    assert bot
+    refute bot.valid?
   end
 
   def test_valid_ua
@@ -30,8 +30,8 @@ class PinterestTest < Minitest::Test
       'Mozilla/5.0 (compatible; Pinterestbot/1.0; +https://www.pinterest.com/bot.html)',
       '54.236.1.11'
     )
-    assert bot, msg: 'Pinterest detected from User-Agent'
-    assert bot.valid?, msg: 'Valid Pinterest'
+    assert bot
+    assert bot.valid?
   end
 
   # rubocop:disable Layout/LineLength

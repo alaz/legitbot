@@ -7,13 +7,13 @@ class TwitterTest < Minitest::Test
   def test_malicious_ip
     ip = '149.210.164.47'
     match = Legitbot::Twitter.new ip
-    assert !match.valid?, msg: "#{ip} is not a real Twitter IP"
+    refute match.valid?
   end
 
   def test_valid_ip
     ip = '199.16.156.125'
     match = Legitbot::Twitter.new ip
-    assert match.valid?, msg: "#{ip} is a valid Twitter IP"
+    assert match.valid?
   end
 
   def test_malicious_ua
@@ -21,8 +21,8 @@ class TwitterTest < Minitest::Test
       'Twitterbot/1.0',
       '149.210.164.47'
     )
-    assert bot, msg: 'Twitter detected from User-Agent'
-    assert !bot.valid?, msg: 'Not a valid Twitter'
+    assert bot
+    refute bot.valid?
   end
 
   def test_valid_ua
@@ -30,7 +30,7 @@ class TwitterTest < Minitest::Test
       'Twitterbot/1.0',
       '199.16.156.125'
     )
-    assert bot, msg: 'Twitter detected from User-Agent'
-    assert bot.valid?, msg: 'Valid Twitter'
+    assert bot
+    assert bot.valid?
   end
 end

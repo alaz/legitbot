@@ -7,13 +7,13 @@ class PetalbotTest < Minitest::Test
   def test_malicious_ip
     ip = '149.210.164.47'
     match = Legitbot::Petalbot.new ip
-    assert !match.valid?, msg: "#{ip} is not a real Petalbot IP"
+    refute match.valid?
   end
 
   def test_valid_ip
-    ip = '114.119.128.10'
+    ip = '114.119.134.10'
     match = Legitbot::Petalbot.new ip
-    assert match.valid?, msg: "#{ip} is a valid Petalbot IP"
+    assert match.valid?
   end
 
   def test_malicious_ua
@@ -21,17 +21,17 @@ class PetalbotTest < Minitest::Test
       'Mozilla/5.0 (compatible;PetalBot; +https://aspiegel.com/petalbot)',
       '149.210.164.47'
     )
-    assert bot, msg: 'Petalbot detected from User-Agent'
-    assert !bot.valid?, msg: 'Not a valid Petalbot'
+    assert bot
+    refute bot.valid?
   end
 
   def test_valid_ua
     bot = Legitbot.bot(
       'Mozilla/5.0 (compatible;PetalBot; +https://aspiegel.com/petalbot)',
-      '114.119.128.10'
+      '114.119.134.10'
     )
-    assert bot, msg: 'Petalbot detected from User-Agent'
-    assert bot.valid?, msg: 'Valid Petalbot'
+    assert bot
+    assert bot.valid?
   end
 
   def test_valid_name
