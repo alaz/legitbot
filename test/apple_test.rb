@@ -1,9 +1,14 @@
 # frozen_string_literal: true
 
 require 'minitest/autorun'
+require 'minitest/hooks/test'
+require 'lib/dns_server_mock'
 require 'legitbot'
 
 class AppleTest < Minitest::Test
+  include Minitest::Hooks
+  include DnsServerMock
+
   def test_valid_ip
     ip = '17.58.98.60'
     match = Legitbot::Apple.new(ip)
