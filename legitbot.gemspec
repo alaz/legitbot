@@ -23,12 +23,14 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'fast_interval_tree', '~> 0.2', '>= 0.2.2'
   spec.add_dependency 'irrc', '~> 0.2', '>= 0.2.1'
   spec.add_development_dependency 'bump', '~> 0.8', '>= 0.8.0'
+  spec.add_development_dependency 'dns_mock', '~> 1.5.0', '>= 1.5.0'
   spec.add_development_dependency 'minitest', '~> 5.1', '>= 5.1.0'
+  spec.add_development_dependency 'minitest-hooks', '~> 1.5', '>= 1.5.0'
   spec.add_development_dependency 'rake', '~> 13.0', '>= 13.0.0'
   spec.add_development_dependency 'rubocop', '~> 1.24.0', '>= 1.24.0'
   spec.add_development_dependency 'rubocop-minitest', '~> 0.17.0', '>= 0.17.0'
 
   spec.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   spec.rdoc_options = ['--charset=UTF-8']
-  spec.test_files = Dir.glob('test/**/*')
+  spec.test_files = Dir.glob('test/**/*').reject { |f| f.start_with? 'test/lib' }
 end

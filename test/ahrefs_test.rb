@@ -1,9 +1,14 @@
 # frozen_string_literal: true
 
 require 'minitest/autorun'
+require 'minitest/hooks/test'
+require 'lib/dns_server_mock'
 require 'legitbot'
 
 class AhrefsTest < Minitest::Test
+  include Minitest::Hooks
+  include DnsServerMock
+
   def test_malicious_ip
     ip = '149.210.164.47'
     match = Legitbot::Ahrefs.new ip
