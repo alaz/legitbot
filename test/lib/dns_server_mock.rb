@@ -68,13 +68,13 @@ class DnsServer
     attr_accessor :mock
   end
 
-  @mock = DnsMock.start_server
+  @mock = DnsMock.start_server records: TEST_DNS_RECORDS
 end
 
 module DnsServerMock
   def before_all
     super
-    DnsServer.mock.assign_mocks TEST_DNS_RECORDS
+
     Legitbot.resolver_config = {
       nameserver: 'localhost',
       nameserver_port: [['localhost', DnsServer.mock.port]]
@@ -83,7 +83,7 @@ module DnsServerMock
 
   def after_all
     Legitbot.resolver_config = nil
-    DnsServer.mock.reset_mocks!
+
     super
   end
 end
