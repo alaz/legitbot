@@ -64,6 +64,8 @@ module Legitbot
           return nil if record.nil?
 
           resolver.getaddress(record.to_s).to_s
+        rescue Resolv::ResolvError
+          nil
         end
       end
     end
