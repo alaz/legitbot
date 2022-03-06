@@ -3,6 +3,8 @@
 module Legitbot # :nodoc:
   # https://duckduckgo.com/duckduckbot
   class DuckDuckGo < BotMatch
+    # @fetch:url https://help.duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/
+    # @fetch:selector section.main article.content ul > li
     ip_ranges %w[
       20.191.45.212
       40.88.21.235
