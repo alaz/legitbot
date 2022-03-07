@@ -3,8 +3,6 @@ name: build
 on:
   pull_request:
   push:
-  schedule:
-  - cron: '29 6 * * 6'
 
 jobs:
   test:
