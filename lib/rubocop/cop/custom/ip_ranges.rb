@@ -32,12 +32,6 @@ module RuboCop
           end
         end
 
-        # def autocorrect(node)
-        #   -> (corrector) do
-        #     corrector.replace node, "new_ips"
-        #   end
-        # end
-
         private
 
         def fetch_ips(url:, selector:)
