@@ -38,5 +38,7 @@ jobs:
       with:
         branch: update/lint-autocorrect
         delete-branch: true
-        commit-message: 'autocorrect by Rubocop'
+        commit-message: '🔧 autocorrect by Rubocop'
         title: '[rubocop] Automatic corrections'
+        body: |
+          Please review automatic changes proposed by `rubocop -a`.
