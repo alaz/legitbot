@@ -1,8 +1,7 @@
 name: autocorrect
 
 on:
-  schedule:
-  - cron: '29 6 * * 6'
+  push:
 
 jobs:
   lint:
@@ -35,7 +34,8 @@ jobs:
       run: bundle exec rubocop --auto-correct
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
-      branch: update/lint-autocorrect
-      delete-branch: true
-      commit-message: 'autocorrect by Rubocop'
-      title: '[rubocop] Automatic corrections'
+      with:
+        branch: update/lint-autocorrect
+        delete-branch: true
+        commit-message: 'autocorrect by Rubocop'
+        title: '[rubocop] Automatic corrections'
