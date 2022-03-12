@@ -40,3 +40,5 @@ jobs:
         delete-branch: true
         commit-message: 'autocorrect by Rubocop'
         title: '[rubocop] Automatic corrections'
+        body: |
+          Automatic changes proposed by `rubocop -a`.
