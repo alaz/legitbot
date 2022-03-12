@@ -1,6 +1,7 @@
 name: autocorrect
 
 on:
+  push:
   schedule:
   - cron: '29 6 * * 6'
 
