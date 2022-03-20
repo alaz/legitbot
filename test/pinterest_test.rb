@@ -12,13 +12,13 @@ class PinterestTest < Minitest::Test
   def test_malicious_ip
     ip = '149.210.164.47'
     match = Legitbot::Pinterest.new ip
-    refute match.valid?
+    refute_predicate match, :valid?
   end
 
   def test_valid_ip
     ip = '54.236.1.11'
     match = Legitbot::Pinterest.new ip
-    assert match.valid?
+    assert_predicate match, :valid?
   end
 
   def test_malicious_ua
@@ -27,7 +27,7 @@ class PinterestTest < Minitest::Test
       '149.210.164.47'
     )
     assert bot
-    refute bot.valid?
+    refute_predicate bot, :valid?
   end
 
   def test_valid_ua
@@ -36,7 +36,7 @@ class PinterestTest < Minitest::Test
       '54.236.1.11'
     )
     assert bot
-    assert bot.valid?
+    assert_predicate bot, :valid?
   end
 
   # rubocop:disable Layout/LineLength

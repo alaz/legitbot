@@ -7,13 +7,13 @@ class TwitterTest < Minitest::Test
   def test_malicious_ip
     ip = '149.210.164.47'
     match = Legitbot::Twitter.new ip
-    refute match.valid?
+    refute_predicate match, :valid?
   end
 
   def test_valid_ip
     ip = '199.16.156.125'
     match = Legitbot::Twitter.new ip
-    assert match.valid?
+    assert_predicate match, :valid?
   end
 
   def test_malicious_ua
@@ -22,7 +22,7 @@ class TwitterTest < Minitest::Test
       '149.210.164.47'
     )
     assert bot
-    refute bot.valid?
+    refute_predicate bot, :valid?
   end
 
   def test_valid_ua
@@ -31,6 +31,6 @@ class TwitterTest < Minitest::Test
       '199.16.156.125'
     )
     assert bot
-    assert bot.valid?
+    assert_predicate bot, :valid?
   end
 end

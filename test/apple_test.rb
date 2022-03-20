@@ -12,13 +12,13 @@ class AppleTest < Minitest::Test
   def test_valid_ip
     ip = '17.58.98.60'
     match = Legitbot::Apple.new(ip)
-    assert match.valid?
+    assert_predicate match, :valid?
   end
 
   def test_invalid_ip
     ip = '127.0.0.1'
     match = Legitbot::Apple.new(ip)
-    assert match.fake?
+    assert_predicate match, :fake?
   end
 
   # rubocop:disable Layout/LineLength
@@ -28,7 +28,7 @@ class AppleTest < Minitest::Test
       '17.58.98.60'
     )
     assert_equal :apple, bot.detected_as
-    assert bot.valid?
+    assert_predicate bot, :valid?
   end
   # rubocop:enable Layout/LineLength
 end

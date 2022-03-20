@@ -20,17 +20,17 @@ class FacebookTest < Minitest::Test
   def test_valid_ip
     ip = '69.63.186.89'
     match = Legitbot::Facebook.new(ip)
-    assert match.valid?
+    assert_predicate match, :valid?
 
     ip = '69.171.251.1'
     match = Legitbot::Facebook.new(ip)
-    assert match.valid?
+    assert_predicate match, :valid?
   end
 
   def test_invalid_ip
     ip = '127.0.0.1'
     match = Legitbot::Facebook.new(ip)
-    assert match.fake?
+    assert_predicate match, :fake?
   end
 
   def test_user_agent1
@@ -39,7 +39,7 @@ class FacebookTest < Minitest::Test
       '31.13.76.56'
     ) do |bot|
       assert_equal :facebook, bot.detected_as
-      assert bot.valid?
+      assert_predicate bot, :valid?
     end
   end
 
@@ -49,7 +49,7 @@ class FacebookTest < Minitest::Test
       '173.252.87.8'
     ) do |bot|
       assert_equal :facebook, bot.detected_as
-      assert bot.valid?
+      assert_predicate bot, :valid?
     end
   end
 
@@ -60,7 +60,7 @@ class FacebookTest < Minitest::Test
       '92.243.181.7'
     ) do |bot|
       assert_includes %i[facebook twitter], bot.detected_as
-      assert bot.fake?
+      assert_predicate bot, :fake?
     end
   end
   # rubocop:enable Layout/LineLength

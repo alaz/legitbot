@@ -7,13 +7,13 @@ class OracleTest < Minitest::Test
   def test_malicious_ip
     ip = '149.210.164.47'
     match = Legitbot::Oracle.new ip
-    refute match.valid?
+    refute_predicate match, :valid?
   end
 
   def test_valid_ip
     ip = '148.64.56.64'
     match = Legitbot::Oracle.new ip
-    assert match.valid?
+    assert_predicate match, :valid?
   end
 
   def test_malicious_ua
@@ -22,7 +22,7 @@ class OracleTest < Minitest::Test
       '149.210.164.47'
     )
     assert bot
-    refute bot.valid?
+    refute_predicate bot, :valid?
   end
 
   def test_valid_ua
@@ -31,6 +31,6 @@ class OracleTest < Minitest::Test
       '148.64.56.64'
     )
     assert bot
-    assert bot.valid?
+    assert_predicate bot, :valid?
   end
 end

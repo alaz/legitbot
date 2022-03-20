@@ -12,13 +12,13 @@ class AlexaTest < Minitest::Test
   def test_malicious_ip
     ip = '149.210.164.47'
     match = Legitbot::Alexa.new ip
-    refute match.valid?
+    refute_predicate match, :valid?
   end
 
   def test_valid_ip
     ip = '52.86.176.3'
     match = Legitbot::Alexa.new ip
-    assert match.valid?
+    assert_predicate match, :valid?
   end
 
   def test_malicious_ua
@@ -27,7 +27,7 @@ class AlexaTest < Minitest::Test
       '149.210.164.47'
     )
     assert bot
-    refute bot.valid?
+    refute_predicate bot, :valid?
   end
 
   def test_valid_ua
@@ -36,6 +36,6 @@ class AlexaTest < Minitest::Test
       '52.86.176.3'
     )
     assert bot
-    assert bot.valid?
+    assert_predicate bot, :valid?
   end
 end
