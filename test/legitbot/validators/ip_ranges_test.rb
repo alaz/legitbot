@@ -87,7 +87,7 @@ module Legitbot
         assert EmptyRanges.valid_ip?('2a03:2880:f234:0:0:0:0:1')
 
         matcher = EmptyRanges.new '127.0.0.0'
-        assert matcher.valid_ip?
+        assert_predicate matcher, :valid_ip?
       end
 
       def test_matcher_array
@@ -107,15 +107,15 @@ module Legitbot
       # rubocop:disable Metrics/AbcSize
       def test_matcher_loader
         assert_equal 0, LoadRanges.counter
-        assert LoadRanges.new('127.127.127.127').valid_ip?
-        refute LoadRanges.new('10.10.10.10').valid_ip?
-        refute LoadRanges.new('192.168.127.254').valid_ip?
+        assert_predicate LoadRanges.new('127.127.127.127'), :valid_ip?
+        refute_predicate LoadRanges.new('10.10.10.10'), :valid_ip?
+        refute_predicate LoadRanges.new('192.168.127.254'), :valid_ip?
         assert_equal 1, LoadRanges.counter
 
         LoadRanges.reload_ips
-        refute LoadRanges.new('127.127.127.127').valid_ip?
-        refute LoadRanges.new('10.10.10.10').valid_ip?
-        assert LoadRanges.new('192.168.127.254').valid_ip?
+        refute_predicate LoadRanges.new('127.127.127.127'), :valid_ip?
+        refute_predicate LoadRanges.new('10.10.10.10'), :valid_ip?
+        assert_predicate LoadRanges.new('192.168.127.254'), :valid_ip?
         assert_equal 2, LoadRanges.counter
       end
       # rubocop:enable Metrics/AbcSize
