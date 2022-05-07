@@ -28,10 +28,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest-hooks', '~> 1.5', '>= 1.5.0'
   spec.add_development_dependency 'nokogiri', '~> 1.13.0', '>= 1.13.0'
   spec.add_development_dependency 'rake', '~> 13.0', '>= 13.0.0'
-  spec.add_development_dependency 'rubocop', '~> 1.28.0', '>= 1.28.0'
-  spec.add_development_dependency 'rubocop-minitest', '~> 0.19.0', '>= 0.19.0'
+  spec.add_development_dependency 'rubocop', '~> 1.31.0', '>= 1.31.0'
+  spec.add_development_dependency 'rubocop-minitest', '~> 0.20.0', '>= 0.20.0'
 
   spec.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   spec.rdoc_options = ['--charset=UTF-8']
-  spec.test_files = Dir.glob('test/**/*').reject { |f| f.start_with? 'test/lib' }
 end
