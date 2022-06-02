@@ -13,13 +13,13 @@ jobs:
         ruby: [ 3.0 ]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
     - name: Cache dependencies
-      uses: actions/cache@v1
+      uses: actions/cache@v3
       with:
         path: vendor/bundle
         key: ${{ runner.os }}-${{ matrix.ruby }}-gems-${{ hashFiles('**/Gemfile.lock') }}
