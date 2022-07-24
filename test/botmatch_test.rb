@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
-require 'minitest/autorun'
-require 'minitest/hooks/test'
-require 'lib/dns_server_mock'
-require 'legitbot'
+require_relative 'test_helper'
 
 class BotMatchTest < Minitest::Test
   include Minitest::Hooks
