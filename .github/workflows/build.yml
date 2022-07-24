@@ -32,6 +32,10 @@ jobs:
         bundle install --jobs 4 --retry 3
     - name: Run tests
       run: bundle exec rake test
+    - name: Upload coverage
+      uses: codecov/codecov-action@v3
+      with:
+        files: coverage/coverage.xml
 
   lint:
     needs: test
