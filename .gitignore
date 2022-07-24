@@ -2,6 +2,7 @@ Gemfile.lock
 .bundle
 *.gem
 *.gemfile.lock
+/coverage
 /pkg
 /tags
 /vendor
