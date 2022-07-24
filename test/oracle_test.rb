@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-require 'minitest/autorun'
-require 'legitbot'
+require_relative 'test_helper'
 
 class OracleTest < Minitest::Test
   def test_malicious_ip
