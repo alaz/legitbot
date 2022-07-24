@@ -3,9 +3,13 @@ coverage:
     project:
       default:
         informational: true
+        only_pulls: true
+        threshold: 1%
     patch:
       default:
         informational: true
+        only_pulls: true
+        threshold: 1%
 
 comment:
   require_changes: true
