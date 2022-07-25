@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 13.0', '>= 13.0.0'
   spec.add_development_dependency 'rubocop', '~> 1.31.0', '>= 1.31.0'
   spec.add_development_dependency 'rubocop-minitest', '~> 0.20.0', '>= 0.20.0'
-  spec.add_development_dependency 'simplecov-cobertura', '~> 1.0', '>= 1.0'
+  spec.add_development_dependency 'simplecov-cobertura', '~> 2.0', '>= 2.0'
 
   spec.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   spec.rdoc_options = ['--charset=UTF-8']
