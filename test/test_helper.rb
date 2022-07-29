@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
 require 'simplecov'
-SimpleCov.start
-
 require 'simplecov-cobertura'
-SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
+SimpleCov.start do
+  formatter SimpleCov::Formatter::CoberturaFormatter
+  add_filter %r{^/lib/rubocop/}
+  add_filter %r{^/test/}
+end
 
 require 'legitbot'
 

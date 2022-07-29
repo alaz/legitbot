@@ -13,7 +13,3 @@ coverage:
 
 comment:
   require_changes: true
-
-ignore:
-  - lib/rubocop
-  - test/
