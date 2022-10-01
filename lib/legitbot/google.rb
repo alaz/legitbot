@@ -15,5 +15,10 @@ module Legitbot # :nodoc:
     Mediapartners-Google
     AdsBot-Google-Mobile-Apps
     FeedFetcher-Google
+    Google-Read-Aloud
+    DuplexWeb-Google
+    googleweblight
+    Storebot-Google
+    Google-Site-Verification
   ]
 end
