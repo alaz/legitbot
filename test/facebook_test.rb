@@ -19,16 +19,19 @@ class FacebookTest < Minitest::Test
   def test_valid_ip
     ip = '69.63.186.89'
     match = Legitbot::Facebook.new(ip)
+
     assert_predicate match, :valid?
 
     ip = '69.171.251.1'
     match = Legitbot::Facebook.new(ip)
+
     assert_predicate match, :valid?
   end
 
   def test_invalid_ip
     ip = '127.0.0.1'
     match = Legitbot::Facebook.new(ip)
+
     assert_predicate match, :fake?
   end
 

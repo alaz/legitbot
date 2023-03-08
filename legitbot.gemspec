@@ -26,10 +26,10 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'dns_mock', '~> 1.5.0', '>= 1.5.0'
   spec.add_development_dependency 'minitest', '~> 5.1', '>= 5.1.0'
   spec.add_development_dependency 'minitest-hooks', '~> 1.5', '>= 1.5.0'
-  spec.add_development_dependency 'nokogiri', '~> 1.13.0', '>= 1.13.0'
+  spec.add_development_dependency 'nokogiri', '~> 1.14', '>= 1.14.3'
   spec.add_development_dependency 'rake', '~> 13.0', '>= 13.0.0'
-  spec.add_development_dependency 'rubocop', '~> 1.36.0', '>= 1.36.0'
-  spec.add_development_dependency 'rubocop-minitest', '~> 0.22.0', '>= 0.22.0'
+  spec.add_development_dependency 'rubocop', '~> 1.50.0', '>= 1.50.0'
+  spec.add_development_dependency 'rubocop-minitest', '~> 0.31.0', '>= 0.31.0'
   spec.add_development_dependency 'simplecov-cobertura', '~> 2.0', '>= 2.0'
 
   spec.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)

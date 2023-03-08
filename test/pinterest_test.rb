@@ -9,12 +9,14 @@ class PinterestTest < Minitest::Test
   def test_malicious_ip
     ip = '149.210.164.47'
     match = Legitbot::Pinterest.new ip
+
     refute_predicate match, :valid?
   end
 
   def test_valid_ip
     ip = '54.236.1.11'
     match = Legitbot::Pinterest.new ip
+
     assert_predicate match, :valid?
   end
 
@@ -23,6 +25,7 @@ class PinterestTest < Minitest::Test
       'Mozilla/5.0 (compatible; Pinterestbot/1.0; +https://www.pinterest.com/bot.html)',
       '149.210.164.47'
     )
+
     assert bot
     refute_predicate bot, :valid?
   end
@@ -32,6 +35,7 @@ class PinterestTest < Minitest::Test
       'Mozilla/5.0 (compatible; Pinterestbot/1.0; +https://www.pinterest.com/bot.html)',
       '54.236.1.11'
     )
+
     assert bot
     assert_predicate bot, :valid?
   end
@@ -42,6 +46,7 @@ class PinterestTest < Minitest::Test
       'Mozilla/5.0 (Linux; Android 8.0.0; SM-G965F Build/R16NW; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.64 Mobile Safari/537.36 [Pinterest/Android]',
       '85.117.106.133'
     )
+
     assert_nil bot
   end
   # rubocop:enable Layout/LineLength
@@ -51,6 +56,7 @@ class PinterestTest < Minitest::Test
       'Mozilla/5.0 (compatible; Pinterestbot/1.0; +https://www.pinterest.com/bot.html)',
       '54.236.1.11'
     )
+
     assert_equal :pinterest, bot.detected_as
   end
 end
