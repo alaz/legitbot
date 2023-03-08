@@ -60,17 +60,20 @@ module Legitbot
     class IpRangesTest < Minitest::Test
       def test_partition_method
         empty = NoRanges.partition_ips([])
+
         assert_empty empty
       end
 
       def test_ipv6_partition
         ipv6 = NoRanges.partition_ips(['2a03:2880:f234::/48'])
+
         assert_nil ipv6[:ipv4].top_node
         refute_nil ipv6[:ipv6].top_node
       end
 
       def test_ipv4_partition
         ipv4 = NoRanges.partition_ips(['66.220.144.0/21'])
+
         refute_nil ipv4[:ipv4].top_node
         assert_nil ipv4[:ipv6].top_node
       end
@@ -87,6 +90,7 @@ module Legitbot
         assert EmptyRanges.valid_ip?('2a03:2880:f234:0:0:0:0:1')
 
         matcher = EmptyRanges.new '127.0.0.0'
+
         assert_predicate matcher, :valid_ip?
       end
 
@@ -113,6 +117,7 @@ module Legitbot
         assert_equal 1, LoadRanges.counter
 
         LoadRanges.reload_ips
+
         refute_predicate LoadRanges.new('127.127.127.127'), :valid_ip?
         refute_predicate LoadRanges.new('10.10.10.10'), :valid_ip?
         assert_predicate LoadRanges.new('192.168.127.254'), :valid_ip?
