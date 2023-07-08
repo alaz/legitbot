@@ -3,6 +3,7 @@
 require 'ipaddr'
 require 'net/http'
 require 'nokogiri'
+require 'jsonpath'
 require 'rubocop'
 require 'uri'
 
@@ -34,12 +35,17 @@ module RuboCop
 
         private
 
-        def fetch_ips(url:, selector:)
+        def fetch_ips(url:, selector: nil, jsonpath: nil)
           response = Net::HTTP.get_response URI(url)
           response.value
 
-          document = Nokogiri::HTML response.body
-          document.css(selector).map(&:content).sort_by(&IPAddr.method(:new))
+          if selector
+            document = Nokogiri::HTML response.body
+            document.css(selector).map(&:content).sort_by(&IPAddr.method(:new))
+          else
+            document = JSON.parse response.body
+            JsonPath.new(jsonpath).on(document).sort_by(&IPAddr.method(:new))
+          end
         end
 
         def read_node_ips(value)
@@ -54,7 +60,7 @@ module RuboCop
         end
 
         def mandatory_params?(params)
-          params.include?(:url) && params.include?(:selector)
+          params.include?(:url) && (params.include?(:selector) || params.include?(:jsonpath))
         end
 
         def fetch_params(node)

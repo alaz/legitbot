@@ -6,6 +6,7 @@ gemspec
 group :development do
   gem 'bump'
   gem 'dns_mock'
+  gem 'jsonpath'
   gem 'minitest'
   gem 'minitest-hooks'
   gem 'nokogiri'
