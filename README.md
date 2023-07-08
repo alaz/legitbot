@@ -57,6 +57,7 @@ end
 * [DuckDuckGo bot](https://duckduckgo.com/duckduckbot)
 * [Facebook crawler](https://developers.facebook.com/docs/sharing/webmasters/crawler)
 * [Google crawlers](https://support.google.com/webmasters/answer/1061943)
+* [IAS](https://integralads.com/ias-privacy-data-management/policies/site-indexing-policy/)
 * [Oracle Data Cloud Crawler](https://www.oracle.com/corporate/acquisitions/grapeshot/crawler.html)
 * [Petal search engine](http://aspiegel.com/petalbot)
 * [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
