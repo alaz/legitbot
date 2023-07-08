@@ -3,7 +3,8 @@
 module Legitbot # :nodoc:
   # https://integralads.com/ias-privacy-data-management/policies/site-indexing-policy/
   class Ias < BotMatch
-    # https://integralads.com/policy-docs/iasbot.json
+    # @fetch:url https://integralads.com/policy-docs/iasbot.json
+    # @fetch:jsonpath $.publicIPs[*].ipv4
     ip_ranges %w[
       3.217.168.199
       3.226.51.67
