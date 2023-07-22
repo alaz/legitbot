@@ -27,6 +27,7 @@ module RuboCop
 
             existing_ips = read_node_ips value
             new_ips = fetch_ips(**params)
+            return unless new_ips
             return if existing_ips == new_ips
 
             register_offense(value, new_ips, **params)
@@ -36,16 +37,31 @@ module RuboCop
         private
 
         def fetch_ips(url:, selector: nil, jsonpath: nil)
-          response = Net::HTTP.get_response URI(url)
-          response.value
+          body = get_url url
+          return unless body
+          return parse_html(body, selector) if selector
+          return parse_json(body, jsonpath) if jsonpath
+        end
 
-          if selector
-            document = Nokogiri::HTML response.body
-            document.css(selector).map(&:content).sort_by(&IPAddr.method(:new))
-          else
-            document = JSON.parse response.body
-            JsonPath.new(jsonpath).on(document).sort_by(&IPAddr.method(:new))
+        def get_url(url)
+          response = Net::HTTP.get_response URI(url)
+          unless response.is_a?(Net::HTTPOK)
+            add_global_offense "Could not fetch IPs from #{url} , HTTP status code #{response.code}"
+            return
           end
+
+          response.value
+          response.body
+        end
+
+        def parse_html(body, selector)
+          document = Nokogiri::HTML body
+          document.css(selector).map(&:content).sort_by(&IPAddr.method(:new))
+        end
+
+        def parse_json(body, jsonpath)
+          document = JSON.parse body
+          JsonPath.new(jsonpath).on(document).sort_by(&IPAddr.method(:new))
         end
 
         def read_node_ips(value)
