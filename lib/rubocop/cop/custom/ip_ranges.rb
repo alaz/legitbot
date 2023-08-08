@@ -25,8 +25,8 @@ module RuboCop
             params = fetch_params(node)
             return unless mandatory_params?(params)
 
-            existing_ips = read_node_ips value
-            new_ips = fetch_ips(**params)
+            existing_ips = normalise_list(read_node_ips(value))
+            new_ips = normalise_list(fetch_ips(**params))
             return unless new_ips
             return if existing_ips == new_ips
 
@@ -41,6 +41,8 @@ module RuboCop
           return unless body
           return parse_html(body, selector) if selector
           return parse_json(body, jsonpath) if jsonpath
+
+          parse_text(body)
         end
 
         def get_url(url)
@@ -56,16 +58,24 @@ module RuboCop
 
         def parse_html(body, selector)
           document = Nokogiri::HTML body
-          document.css(selector).map(&:content).sort_by(&IPAddr.method(:new))
+          document.css(selector).map(&:content)
         end
 
         def parse_json(body, jsonpath)
           document = JSON.parse body
-          JsonPath.new(jsonpath).on(document).sort_by(&IPAddr.method(:new))
+          JsonPath.new(jsonpath).on(document)
+        end
+
+        def parse_text(body)
+          body.lines.map(&:chomp)
         end
 
         def read_node_ips(value)
-          value.child_nodes.map(&:value).sort_by(&IPAddr.method(:new))
+          value.child_nodes.map(&:value)
+        end
+
+        def normalise_list(ips)
+          ips.sort_by(&IPAddr.method(:new))
         end
 
         def register_offense(node, new_ips, **params)
@@ -76,7 +86,7 @@ module RuboCop
         end
 
         def mandatory_params?(params)
-          params.include?(:url) && (params.include?(:selector) || params.include?(:jsonpath))
+          params.include?(:url)
         end
 
         def fetch_params(node)
