@@ -34,7 +34,7 @@ jobs:
     - name: Run linter
       run: bundle exec rubocop --auto-correct
     - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v3
+      uses: peter-evans/create-pull-request@v5
       with:
         branch: update/lint-autocorrect
         delete-branch: true
