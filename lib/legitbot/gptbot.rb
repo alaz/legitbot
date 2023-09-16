@@ -5,6 +5,7 @@ module Legitbot # :nodoc:
   class GPTBot < BotMatch
     # @fetch:url https://openai.com/gptbot-ranges.txt
     ip_ranges %w[
+      20.9.164.0/24
       20.15.240.64/28
       20.15.240.80/28
       20.15.240.96/28
