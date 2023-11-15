@@ -9,7 +9,7 @@ module Legitbot # :nodoc:
 
     ip_ranges do
       client = Irrc::Client.new
-      client.query :radb, AS
+      client.query :radb, AS, source: :radb
       results = client.perform
 
       %i[ipv4 ipv6].map do |family|
