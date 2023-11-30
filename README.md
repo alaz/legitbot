@@ -61,6 +61,7 @@ end
 - [IAS](https://integralads.com/ias-privacy-data-management/policies/site-indexing-policy/)
 - [OpenAI GPTBot](https://platform.openai.com/docs/gptbot)
 - [Oracle Data Cloud Crawler](https://www.oracle.com/corporate/acquisitions/grapeshot/crawler.html)
+- [Marginalia](https://www.marginalia.nu/marginalia-search/for-webmasters/)
 - [Petal search engine](http://aspiegel.com/petalbot)
 - [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
 - [Twitterbot](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started),
