@@ -2,6 +2,7 @@
 
 module Legitbot # :nodoc:
   # https://duckduckgo.com/duckduckbot
+  # rubocop:disable Metrics/ClassLength
   class DuckDuckGo < BotMatch
     # @fetch:url https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/
     # @fetch:selector section.main article.content ul > li
@@ -234,6 +235,7 @@ module Legitbot # :nodoc:
       191.235.202.48
     ]
   end
+  # rubocop:enable Metrics/ClassLength
 
   rule Legitbot::DuckDuckGo, %w[DuckDuckBot]
 end
