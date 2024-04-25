@@ -4,6 +4,8 @@ on:
   schedule:
   - cron: '29 6 * * 6'
 
+  workflow_dispatch:
+
 jobs:
   lint:
     runs-on: ubuntu-latest
