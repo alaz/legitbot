@@ -35,6 +35,7 @@ jobs:
       run: bundle exec rake test
     - name: Run linter
       run: bundle exec rubocop -A
+      continue-on-error: true
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v5
       with:
