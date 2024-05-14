@@ -20,5 +20,6 @@ module Legitbot # :nodoc:
     googleweblight
     Storebot-Google
     Google-Site-Verification
+    Google-InspectionTool
   ]
 end
