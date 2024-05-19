@@ -2,6 +2,7 @@ Gemfile.lock
 .bundle
 *.gem
 *.gemfile.lock
+/.vscode
 /coverage
 /pkg
 /tags
