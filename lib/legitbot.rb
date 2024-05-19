@@ -4,7 +4,6 @@ require_relative 'legitbot/legitbot'
 require_relative 'legitbot/botmatch'
 
 require_relative 'legitbot/ahrefs'
-require_relative 'legitbot/alexa'
 require_relative 'legitbot/amazon'
 require_relative 'legitbot/apple'
 require_relative 'legitbot/baidu'
