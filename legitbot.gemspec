@@ -13,13 +13,13 @@ Gem::Specification.new do |spec|
   spec.author = 'Alexander Azarov'
   spec.email = 'self@alaz.me'
   spec.homepage = 'https://github.com/alaz/legitbot'
-  spec.summary = 'Validate requests from Web crawlers: impersonating or not?'
-  spec.description = 'Does Web request come from a real search engine or from an impersonating agent?'
+  spec.summary = 'Web crawler request validation'
+  spec.description = 'Is this Web request from a real search engine or from an impersonating agent?'
   spec.metadata = {
     'rubygems_mfa_required' => 'true'
   }
 
-  spec.required_ruby_version = '>= 2.6.0'
+  spec.required_ruby_version = '>= 3.0.0'
   spec.add_dependency 'fast_interval_tree', '~> 0.2', '>= 0.2.2'
   spec.add_dependency 'irrc', '~> 0.2', '>= 0.2.1'
 
