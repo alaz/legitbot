@@ -14,7 +14,7 @@ module RuboCop
         extend AutoCorrector
 
         MSG = 'Outdated list of IP ranges compared to %<url>s'
-        REGEXP = /^\s*#\s*@fetch:(?<param>[a-z0-9_]+)\s+(?<arg>.*)?/.freeze
+        REGEXP = /^\s*#\s*@fetch:(?<param>[a-z0-9_]+)\s+(?<arg>.*)?/
 
         def_node_matcher :on_ip_ranges, <<~PATTERN
           (send nil? :ip_ranges $(array str+))
