@@ -75,7 +75,7 @@ module RuboCop
         end
 
         def normalise_list(ips)
-          ips.sort_by(&IPAddr.method(:new))
+          ips.uniq.sort_by(&IPAddr.method(:new))
         end
 
         def register_offense(node, new_ips, **params)
