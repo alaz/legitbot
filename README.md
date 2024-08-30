@@ -51,7 +51,7 @@ end
 
 - [Ahrefs](https://ahrefs.com/robot)
 - [Amazon AdBot](https://adbot.amazon.com/index.html)
-- [Applebot](https://support.apple.com/en-us/HT204683)
+- [Applebot](https://support.apple.com/en-us/119829)
 - [Baidu spider](http://help.baidu.com/question?prod_en=master&class=498&id=1000973)
 - [Bingbot](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot/)
 - [DuckDuckGo bot](https://duckduckgo.com/duckduckbot)
