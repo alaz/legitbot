@@ -1,20 +1,14 @@
 # frozen_string_literal: true
 
-require 'irrc'
+require_relative 'meta'
 
 module Legitbot # :nodoc:
   # https://developers.facebook.com/docs/sharing/webmasters/crawler
   class Facebook < BotMatch
-    AS = 'AS32934'
+    extend MetaIpRanges
 
     ip_ranges do
-      client = Irrc::Client.new
-      client.query :radb, AS, source: :radb
-      results = client.perform
-
-      %i[ipv4 ipv6].map do |family|
-        results[AS][family][AS]
-      end.flatten
+      fetch_ip_ranges
     end
   end
 
