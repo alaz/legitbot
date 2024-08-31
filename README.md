@@ -55,12 +55,12 @@ end
 - [Baidu spider](http://help.baidu.com/question?prod_en=master&class=498&id=1000973)
 - [Bingbot](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot/)
 - [DuckDuckGo bot](https://duckduckgo.com/duckduckbot)
-- [Facebook crawler](https://developers.facebook.com/docs/sharing/webmasters/crawler)
 - [Google crawlers](https://support.google.com/webmasters/answer/1061943)
 - [IAS](https://integralads.com/ias-privacy-data-management/policies/site-indexing-policy/)
 - [OpenAI GPTBot](https://platform.openai.com/docs/gptbot)
 - [Oracle Data Cloud Crawler](https://www.oracle.com/corporate/acquisitions/grapeshot/crawler.html)
 - [Marginalia](https://www.marginalia.nu/marginalia-search/for-webmasters/)
+- [Meta / Facebook Web crawlers](https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/)
 - [Petal search engine](http://aspiegel.com/petalbot)
 - [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
 - [Twitterbot](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started),
