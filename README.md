@@ -50,6 +50,7 @@ end
 ## Supported
 
 - [Ahrefs](https://ahrefs.com/robot)
+- [Amazonbot](https://developer.amazon.com/amazonbot)
 - [Amazon AdBot](https://adbot.amazon.com/index.html)
 - [Applebot](https://support.apple.com/en-us/119829)
 - [Baidu spider](http://help.baidu.com/question?prod_en=master&class=498&id=1000973)
