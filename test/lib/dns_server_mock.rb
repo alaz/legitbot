@@ -38,6 +38,14 @@ TEST_DNS_RECORDS = {
     ptr: %w[17-58-98-60.applebot.apple.com]
   },
 
+  # BLEXBot (WebMeUp)
+  'pot22.webmeup.com' => {
+    a: %w[65.21.113.197]
+  },
+  '65.21.113.197' => {
+    ptr: %w[pot22.webmeup.com]
+  },
+
   # Google
   'crawl-66-249-64-141.googlebot.com' => {
     a: %w[66.249.64.141]
