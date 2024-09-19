@@ -29,6 +29,12 @@ TEST_DNS_RECORDS = {
   '54.166.7.90' => {
     ptr: %w[crawler-54-166-7-90.amazonadbot.com]
   },
+  '52-70-240-171.crawl.amazonbot.amazon' => {
+    a: %w[52.70.240.171]
+  },
+  '52.70.240.171' => {
+    ptr: %w[52-70-240-171.crawl.amazonbot.amazon]
+  },
 
   # Apple
   '17-58-98-60.applebot.apple.com' => {
