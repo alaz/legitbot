@@ -2,9 +2,10 @@
 
 module Legitbot # :nodoc:
   # https://adbot.amazon.com/index.html
+  # https://developer.amazon.com/amazonbot
   class Amazon < BotMatch
-    domains 'amazonadbot.com.'
+    domains 'amazon.', 'amazonadbot.com.'
   end
 
-  rule Legitbot::Amazon, %w[AmazonAdBot]
+  rule Legitbot::Amazon, %w[Amazonbot AmazonAdBot]
 end
