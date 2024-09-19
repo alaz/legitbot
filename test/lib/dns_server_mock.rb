@@ -44,6 +44,13 @@ TEST_DNS_RECORDS = {
     ptr: %w[17-58-98-60.applebot.apple.com]
   },
 
+  # BLEXBot (WebMeUp)
+  'pot22.webmeup.com' => {
+    a: %w[65.21.113.197]
+  },
+  '65.21.113.197' => {
+    ptr: %w[pot22.webmeup.com]
+  },
   # DataForSEO
   'crawling-gateway-136-243-228-176.dataforseo.com' => {
     a: %w[136.243.228.176]
