@@ -50,11 +50,13 @@ end
 ## Supported
 
 - [Ahrefs](https://ahrefs.com/robot)
+- [Amazonbot](https://developer.amazon.com/amazonbot)
 - [Amazon AdBot](https://adbot.amazon.com/index.html)
 - [Applebot](https://support.apple.com/en-us/119829)
 - [Baidu spider](http://help.baidu.com/question?prod_en=master&class=498&id=1000973)
 - [Bingbot](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot/)
 - [BLEXBot (WebMeUp)](http://webmeup-crawler.com/)
+- [DataForSEO](https://dataforseo.com/dataforseo-bot)
 - [DuckDuckGo bot](https://duckduckgo.com/duckduckbot)
 - [Google crawlers](https://support.google.com/webmasters/answer/1061943)
 - [IAS](https://integralads.com/ias-privacy-data-management/policies/site-indexing-policy/)

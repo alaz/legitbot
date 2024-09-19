@@ -29,6 +29,12 @@ TEST_DNS_RECORDS = {
   '54.166.7.90' => {
     ptr: %w[crawler-54-166-7-90.amazonadbot.com]
   },
+  '52-70-240-171.crawl.amazonbot.amazon' => {
+    a: %w[52.70.240.171]
+  },
+  '52.70.240.171' => {
+    ptr: %w[52-70-240-171.crawl.amazonbot.amazon]
+  },
 
   # Apple
   '17-58-98-60.applebot.apple.com' => {
@@ -44,6 +50,13 @@ TEST_DNS_RECORDS = {
   },
   '65.21.113.197' => {
     ptr: %w[pot22.webmeup.com]
+  },
+  # DataForSEO
+  'crawling-gateway-136-243-228-176.dataforseo.com' => {
+    a: %w[136.243.228.176]
+  },
+  '136.243.228.176' => {
+    ptr: %w[crawling-gateway-136-243-228-176.dataforseo.com]
   },
 
   # Google
