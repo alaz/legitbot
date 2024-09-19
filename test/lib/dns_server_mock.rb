@@ -38,6 +38,14 @@ TEST_DNS_RECORDS = {
     ptr: %w[17-58-98-60.applebot.apple.com]
   },
 
+  # DataForSEO
+  'crawling-gateway-136-243-228-176.dataforseo.com' => {
+    a: %w[136.243.228.176]
+  },
+  '136.243.228.176' => {
+    ptr: %w[crawling-gateway-136-243-228-176.dataforseo.com]
+  },
+
   # Google
   'crawl-66-249-64-141.googlebot.com' => {
     a: %w[66.249.64.141]
