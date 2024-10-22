@@ -21,5 +21,6 @@ module Legitbot # :nodoc:
     Storebot-Google
     Google-Site-Verification
     Google-InspectionTool
+    Chrome-Lighthouse
   ]
 end
