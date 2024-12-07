@@ -70,7 +70,6 @@ end
   the list of IPs is in the
   [Troubleshooting page](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/troubleshooting-cards)
 - [Yandex robots](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.xml)
-- [You.com](https://about.you.com/youbot/)
 
 ## License
 
