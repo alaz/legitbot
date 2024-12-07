@@ -19,9 +19,11 @@ module Legitbot # :nodoc:
     # @fetch:url https://openai.com/chatgpt-user.json
     # @fetch:jsonpath $.prefixes[*].ipv4Prefix
     ip_ranges %w[
+      4.196.118.112/28
       13.65.240.240/28
       20.97.189.96/28
       20.161.75.208/28
+      20.215.188.192/28
       23.98.142.176/28
       23.98.179.16/28
       40.84.180.64/28
