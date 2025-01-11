@@ -4,7 +4,7 @@ module Legitbot # :nodoc:
   # https://www.marginalia.nu/marginalia-search/for-webmasters/
   class Marginalia < BotMatch
     # https://x.com/MarginaliaNu/status/1824172354081263991
-    # @fetch:url https://search.marginalia.nu/crawler-ips.txt
+    # @fetch:url https://marginalia-search.com/crawler-ips.txt
     ip_ranges %w[
       81.170.128.52
       193.183.0.162
