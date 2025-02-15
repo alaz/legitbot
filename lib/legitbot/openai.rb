@@ -7,6 +7,7 @@ module Legitbot # :nodoc:
     # @fetch:jsonpath $.prefixes[*].ipv4Prefix
     ip_ranges %w[
       4.227.36.0/25
+      20.125.66.80/28
       20.171.206.0/24
       20.171.207.0/24
       52.230.152.0/24
@@ -54,6 +55,7 @@ module Legitbot # :nodoc:
     ip_ranges %w[
       20.42.10.176/28
       51.8.102.0/24
+      135.234.64.0/24
       172.203.190.128/28
     ]
   end
