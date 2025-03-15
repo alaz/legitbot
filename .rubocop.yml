@@ -1,5 +1,7 @@
-require:
+plugins:
   - rubocop-minitest
+
+require:
   - rubocop/cop/custom
 
 AllCops:
