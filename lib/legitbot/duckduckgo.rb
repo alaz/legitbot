@@ -4,7 +4,7 @@ module Legitbot # :nodoc:
   # https://duckduckgo.com/duckduckbot
   # rubocop:disable Metrics/ClassLength
   class DuckDuckGo < BotMatch
-    # @fetch:url https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/
+    # @fetch:url https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot
     # @fetch:selector section.main article.content ul > li
     ip_ranges %w[
       4.182.131.108
