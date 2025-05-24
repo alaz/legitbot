@@ -50,8 +50,8 @@ end
 ## Supported
 
 - [Ahrefs](https://ahrefs.com/robot)
-- [AmazonBot](https://developer.amazon.com/amazonbot)
 - [AmazonAdBot](https://adbot.amazon.com/)
+- [AmazonBot](https://developer.amazon.com/amazonbot)
 - [Applebot](https://support.apple.com/en-us/119829)
 - [Baidu spider](http://help.baidu.com/question?prod_en=master&class=498&id=1000973)
 - [Bingbot](https://blogs.bing.com/webmaster/2012/08/31/how-to-verify-that-bingbot-is-bingbot/)
