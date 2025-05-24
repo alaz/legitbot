@@ -1,11 +1,16 @@
 # frozen_string_literal: true
 
 module Legitbot # :nodoc:
-  # https://adbot.amazon.com/index.html
-  # https://developer.amazon.com/amazonbot
-  class Amazon < BotMatch
-    domains 'amazon.', 'amazonadbot.com.'
+  # https://adbot.amazon.com
+  class AmazonAdBot < BotMatch
+    domains 'amazonadbot.com.'
   end
 
-  rule Legitbot::Amazon, %w[Amazonbot AmazonAdBot]
+  # https://developer.amazon.com/en/amazonbot
+  class AmazonBot < BotMatch
+    domains 'crawl.amazonbot.amazon.'
+  end
+
+  rule Legitbot::AmazonBot, %w[Amazonbot]
+  rule Legitbot::AmazonAdBot, %w[AmazonAdBot]
 end
