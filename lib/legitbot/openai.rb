@@ -18,6 +18,7 @@ module Legitbot # :nodoc:
   end
 
   # https://platform.openai.com/docs/bots
+  # rubocop:disable Metrics/ClassLength
   class OpenAIChat < BotMatch
     # @fetch:url https://openai.com/chatgpt-user.json
     # @fetch:jsonpath $.prefixes[*].ipv4Prefix
@@ -127,6 +128,7 @@ module Legitbot # :nodoc:
       172.213.21.144/28
     ]
   end
+  # rubocop:enable Metrics/ClassLength
 
   # https://platform.openai.com/docs/bots
   class OpenAISearch < BotMatch
