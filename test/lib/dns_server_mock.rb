@@ -22,13 +22,15 @@ TEST_DNS_RECORDS = {
     ptr: %w[crawl-52-86-176-3.alexa.com]
   },
 
-  # Amazon
+  # AmazonAdBot
   'crawler-54-166-7-90.amazonadbot.com' => {
     a: %w[54.166.7.90]
   },
   '54.166.7.90' => {
     ptr: %w[crawler-54-166-7-90.amazonadbot.com]
   },
+
+  # AmazonBot
   '52-70-240-171.crawl.amazonbot.amazon' => {
     a: %w[52.70.240.171]
   },
