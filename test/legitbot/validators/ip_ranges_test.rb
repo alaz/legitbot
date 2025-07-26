@@ -12,16 +12,19 @@ module Legitbot
 
     class ArrayRanges
       include IpRanges
+
       ip_ranges '66.220.144.0/21', '2a03:2880:f234::/48'
     end
 
     class FlattenRanges
       include IpRanges
+
       ip_ranges %w[66.220.144.0/21 2a03:2880:f234::/48]
     end
 
     class EmptyRanges
       include IpRanges
+
       ip_ranges
 
       def initialize(ip)
@@ -49,11 +52,13 @@ module Legitbot
 
     class NilRanges
       include IpRanges
+
       ip_ranges { nil }
     end
 
     class Ipv4Ranges
       include IpRanges
+
       ip_ranges { ['66.220.144.0/21'] }
     end
 

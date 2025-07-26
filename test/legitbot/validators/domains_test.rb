@@ -11,6 +11,7 @@ module Legitbot
 
     class DomainMatch
       include Domains
+
       domains 'search.msn.com', reverse: false
 
       @resolver = Minitest::Mock.new
@@ -27,6 +28,7 @@ module Legitbot
 
     class ReverseMatch
       include Domains
+
       domains 'search.msn.com'
     end
 
