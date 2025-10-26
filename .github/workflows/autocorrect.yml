@@ -1,4 +1,4 @@
-name: autocorrect
+name: Autocorrect
 
 on:
   schedule:

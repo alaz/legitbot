@@ -1,4 +1,4 @@
-name: release
+name: Release
 
 on:
   push:
@@ -9,6 +9,7 @@ on:
 
 jobs:
   release:
+    name: Publish to Rubygems
     runs-on: ubuntu-latest
 
     permissions:

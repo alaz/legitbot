@@ -1,10 +1,11 @@
-name: checks
+name: PR Checks
 
 on:
   pull_request:
 
 jobs:
   test:
+    name: Tests
     runs-on: ubuntu-latest
 
     strategy:
@@ -23,6 +24,7 @@ jobs:
         run: bundle exec rake test
 
   lint:
+    name: Lint
     needs: test
     runs-on: ubuntu-latest
 
