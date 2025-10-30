@@ -2,7 +2,7 @@
 
 module Legitbot # :nodoc:
   # https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot
-  # rubocop:disable Metrics/ClassLength
+  # rubocop:disable Metrics/ClassLength, Metrics/CollectionLiteralLength
   class DuckDuckBot < BotMatch
     # @fetch:url https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot
     # @fetch:selector main > article ul > li > div
@@ -511,7 +511,7 @@ module Legitbot # :nodoc:
       191.235.202.48
     ]
   end
-  # rubocop:enable Metrics/ClassLength
+  # rubocop:enable Metrics/ClassLength, Metrics/CollectionLiteralLength
 
   rule Legitbot::DuckDuckBot, %w[DuckDuckBot]
   rule Legitbot::DuckAssistBot, %w[DuckAssistBot]
