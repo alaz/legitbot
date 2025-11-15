@@ -13,5 +13,4 @@ group :development do
   gem 'rake'
   gem 'rubocop'
   gem 'rubocop-minitest'
-  gem 'simplecov-cobertura'
 end
