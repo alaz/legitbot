@@ -7,7 +7,7 @@ group :development do
   gem 'bump'
   gem 'dns_mock'
   gem 'jsonpath'
-  gem 'minitest'
+  gem 'minitest', '~> 5'
   gem 'minitest-hooks'
   gem 'nokogiri'
   gem 'rake'
