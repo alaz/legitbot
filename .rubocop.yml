@@ -5,7 +5,7 @@ require:
   - rubocop/cop/custom
 
 AllCops:
-  CacheRootDirectory: 'vendor'
+  CacheRootDirectory: "vendor"
   NewCops: enable
   SuggestExtensions: false
 
@@ -16,6 +16,12 @@ Naming/MemoizedInstanceVariableName:
   Enabled: false
 
 Style/MapToHash:
+  Enabled: false
+
+Style/OneClassPerFile:
+  Enabled: false
+
+Style/RedundantParentheses:
   Enabled: false
 
 Custom/IpRanges:
