@@ -74,9 +74,8 @@ module Legitbot
         private
 
         def build_interval_tree(list)
-          ranges = list.map(&:to_range).map do |r|
-            (r.begin.to_i..r.end.to_i)
-          end
+          ranges = list.map(&:to_range).map | r |
+                   (r.begin.to_i..r.end.to_i)
           IntervalTree::Tree.new(ranges)
         end
       end
