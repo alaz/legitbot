@@ -21,7 +21,7 @@ module Legitbot
   # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
   def self.bot(user_agent, ip)
     bots = @rules
-           .select { |rule| rule[:fragments].any? { |f| user_agent.index f } }
+           .select { |rule| rule[:fragments].any? { |f| user_agent&.index f } }
            .map { |rule| rule[:class].new(ip) }
 
     selected = bots.select(&:valid?).first if bots.size > 1

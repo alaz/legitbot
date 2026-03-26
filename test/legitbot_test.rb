@@ -11,4 +11,8 @@ class LegitbotTest < Minitest::Test
       flunk 'No bot Firefox is possible'
     end
   end
+
+  def test_nil_ua
+    assert_nil Legitbot.bot(nil, '127.0.0.1')
+  end
 end
