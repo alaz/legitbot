@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 3.2.0'
   spec.add_dependency 'fast_interval_tree', '~> 0.2', '>= 0.2.2'
   spec.add_dependency 'irrc', '~> 0.2', '>= 0.2.1'
+  spec.add_dependency 'logger', '~> 1.7', '>= 1.7.0'
 
   spec.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   spec.rdoc_options = ['--charset=UTF-8']
