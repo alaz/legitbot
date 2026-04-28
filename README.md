@@ -65,6 +65,7 @@ end
 - [Oracle Data Cloud Crawler](https://www.oracle.com/corporate/acquisitions/grapeshot/crawler.html)
 - [Marginalia](https://www.marginalia.nu/marginalia-search/for-webmasters/)
 - [Meta / Facebook Web crawlers](https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/)
+- [Perplexity](https://docs.perplexity.ai/docs/resources/perplexity-crawlers#ip-address-sources)
 - [Petal search engine](http://aspiegel.com/petalbot)
 - [Pinterest](https://help.pinterest.com/en/articles/about-pinterest-crawler-0)
 - [Twitterbot](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started),
