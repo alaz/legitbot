@@ -7,6 +7,7 @@ jobs:
   test:
     name: Tests
     runs-on: ubuntu-latest
+    permissions: {}
 
     strategy:
       fail-fast: false
@@ -14,11 +15,11 @@ jobs:
         ruby: [jruby, 3.2, 3.3, 3.4, 4.0]
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # 6.0.2
         with:
           persist-credentials: false
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@6aaa311d81eba98ae12eaffbcb63296ace0efcde # 1.307.0
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
@@ -29,13 +30,14 @@ jobs:
     name: Lint
     needs: test
     runs-on: ubuntu-latest
+    permissions: {}
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # 6.0.2
         with:
           persist-credentials: false
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@6aaa311d81eba98ae12eaffbcb63296ace0efcde # 1.307.0
         with:
           bundler-cache: true
       - name: Run linter
