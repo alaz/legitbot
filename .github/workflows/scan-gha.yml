@@ -9,7 +9,6 @@ on:
 jobs:
   gha-scan:
     name: GitHub Actions Security Analysis
-    needs: test
     runs-on: ubuntu-latest
     permissions:
       security-events: write
