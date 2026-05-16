@@ -19,10 +19,8 @@ jobs:
         uses: ruby/setup-ruby@6aaa311d81eba98ae12eaffbcb63296ace0efcde # v1.307.0
         with:
           bundler-cache: true
-      - name: Run tests
-        run: bundle exec rake test
       - name: Run linter
-        run: bundle exec rubocop -A
+        run: bundle exec rubocop -A --only Custom/IpRanges
         continue-on-error: true
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
