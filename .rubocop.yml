@@ -25,4 +25,5 @@ Style/RedundantParentheses:
   Enabled: false
 
 Custom/IpRanges:
-  Enabled: true
+  # Run in a dedicated GitHub workflow
+  Enabled: false
