@@ -1,4 +1,4 @@
-name: GitHub Actions Security
+name: GitHub Actions
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   gha-scan:
-    name: Scan
+    name: Security Scan
     runs-on: ubuntu-latest
     permissions:
       security-events: write
