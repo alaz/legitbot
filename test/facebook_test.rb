@@ -42,7 +42,7 @@ class FacebookTest < Minitest::Test
     end
   end
 
-  # rubocop:disable Layout/LineLength
+  # rubocop:disable-next Layout/LineLength
   def test_user_agent3
     Legitbot.bot(
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.4 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.4 facebookexternalhit/1.1 Facebot Twitterbot/1.0',
@@ -52,5 +52,4 @@ class FacebookTest < Minitest::Test
       assert_predicate bot, :fake?
     end
   end
-  # rubocop:enable Layout/LineLength
 end

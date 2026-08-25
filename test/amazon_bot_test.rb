@@ -30,7 +30,7 @@ class AmazonBotTest < Minitest::Test
     refute_predicate bot, :valid?
   end
 
-  # rubocop:disable Layout/LineLength
+  # rubocop:disable-next Layout/LineLength
   def test_user_agent
     bot = Legitbot.bot(
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML\, like Gecko) Version/8.0.2 Safari/600.2.5 (Amazonbot/0.1; +https://developer.amazon.com/support/amazonbot)',
@@ -40,9 +40,8 @@ class AmazonBotTest < Minitest::Test
     assert bot
     assert_predicate bot, :valid?
   end
-  # rubocop:enable Layout/LineLength
 
-  # rubocop:disable Layout/LineLength
+  # rubocop:disable-next Layout/LineLength
   def test_valid_name
     bot = Legitbot.bot(
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML\, like Gecko) Version/8.0.2 Safari/600.2.5 (Amazonbot/0.1; +https://developer.amazon.com/support/amazonbot)',
@@ -51,9 +50,8 @@ class AmazonBotTest < Minitest::Test
 
     assert_equal :amazonbot, bot.detected_as
   end
-  # rubocop:enable Layout/LineLength
 
-  # rubocop:disable Layout/LineLength
+  # rubocop:disable-next Layout/LineLength
   def test_fake_name
     bot = Legitbot.bot(
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML\, like Gecko) Version/8.0.2 Safari/600.2.5 (Amazonbot/0.1; +https://developer.amazon.com/support/amazonbot)',
@@ -62,5 +60,4 @@ class AmazonBotTest < Minitest::Test
 
     assert_equal :amazonbot, bot.detected_as
   end
-  # rubocop:enable Layout/LineLength
 end

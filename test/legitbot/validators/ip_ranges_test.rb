@@ -4,7 +4,7 @@ require 'minitest/autorun'
 require 'legitbot'
 
 module Legitbot
-  # rubocop:disable Minitest/MultipleAssertions
+  # rubocop:disable-next Minitest/MultipleAssertions
   module Validators
     class NoRanges
       include IpRanges
@@ -113,7 +113,7 @@ module Legitbot
         refute FlattenRanges.valid_ip?('2a03:2880:f233:0:0:0:0:1')
       end
 
-      # rubocop:disable Metrics/AbcSize
+      # rubocop:disable-next Metrics/AbcSize
       def test_matcher_loader
         assert_equal 0, LoadRanges.counter
         assert_predicate LoadRanges.new('127.127.127.127'), :valid_ip?
@@ -128,7 +128,6 @@ module Legitbot
         assert_predicate LoadRanges.new('192.168.127.254'), :valid_ip?
         assert_equal 2, LoadRanges.counter
       end
-      # rubocop:enable Metrics/AbcSize
 
       def test_nil_ranges
         assert NilRanges.valid_ip?('127.0.0.1')
@@ -139,5 +138,4 @@ module Legitbot
       end
     end
   end
-  # rubocop:enable Minitest/MultipleAssertions
 end
