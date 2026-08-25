@@ -40,7 +40,7 @@ class PinterestTest < Minitest::Test
     assert_predicate bot, :valid?
   end
 
-  # rubocop:disable Layout/LineLength
+  # rubocop:disable-next Layout/LineLength
   def test_android_not_bot
     bot = Legitbot.bot(
       'Mozilla/5.0 (Linux; Android 8.0.0; SM-G965F Build/R16NW; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.64 Mobile Safari/537.36 [Pinterest/Android]',
@@ -49,7 +49,6 @@ class PinterestTest < Minitest::Test
 
     assert_nil bot
   end
-  # rubocop:enable Layout/LineLength
 
   def test_engine_name
     bot = Legitbot.bot(
