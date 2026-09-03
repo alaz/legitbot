@@ -7,7 +7,10 @@ module Legitbot # :nodoc:
     # @fetch:url https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot
     # @fetch:selector main > article ul > li > div
     ip_ranges %w[
+      4.144.148.23
       4.144.182.50
+      4.144.227.142
+      4.144.251.39
       4.150.142.218
       4.156.30.123
       4.156.136.79
@@ -326,6 +329,7 @@ module Legitbot # :nodoc:
       132.164.209.198
       132.220.1.71
       134.33.207.189
+      135.171.251.169
       135.234.221.112
       172.168.43.43
       172.168.53.53
