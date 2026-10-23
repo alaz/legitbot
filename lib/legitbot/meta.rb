@@ -11,9 +11,15 @@ module Legitbot # :nodoc:
       client.query :radb, AS, source: :radb
       results = client.perform
 
-      %i[ipv4 ipv6].map do |family|
-        results[AS][family][AS]
-      end.flatten
+      routes = results&.fetch(AS, nil)
+      ranges = %i[ipv4 ipv6].flat_map do |family|
+        routes&.dig(family, AS) || []
+      end
+
+      # Empty ranges otherwise disable IP verification in the validator.
+      raise Validators::IpRanges::Unavailable, 'No Meta routes returned by RADB' if ranges.empty?
+
+      ranges
     end
   end
 

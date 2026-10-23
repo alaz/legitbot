@@ -39,6 +39,19 @@ Rack::Attack.blocklist 'fake search engines' do |request|
 end
 ```
 
+### Meta and Facebook route lookups
+
+Meta and Facebook IP verification loads AS32934 routes from RADB on first use
+and caches successful results for each matcher. IPv4-only or IPv6-only results
+are supported; addresses in a missing family do not pass verification.
+
+If RADB returns no routes, `valid?` returns `false` (`fake?` returns `true`)
+instead of raising an exception or accepting an unverified address. An
+unsuccessful lookup is not cached, so the next validation retries it. A failed
+explicit `reload_ips` raises `Legitbot::Validators::IpRanges::Unavailable` and
+preserves any previously cached ranges. This handling covers missing route
+data; transport errors continue to propagate.
+
 ## Versioning
 
 [Semantic versioning](https://semver.org/) with the following clarifications:
