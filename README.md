@@ -52,6 +52,21 @@ explicit `reload_ips` raises `Legitbot::Validators::IpRanges::Unavailable` and
 preserves any previously cached ranges. This handling covers missing route
 data; transport errors continue to propagate.
 
+### Running tests
+
+Run `bundle exec rake test` for the deterministic test suite. Meta/Facebook route
+loading is tested with stubbed RADB responses, including missing data and
+recovery after a failed lookup.
+
+The live RADB smoke test is opt-in because it depends on an external service:
+
+```sh
+LEGITBOT_LIVE_RADB=1 bundle exec ruby -Ilib:test test/meta_test.rb --name test_fetch_ips
+```
+
+This smoke test requires network access to RADB and fails if the service cannot
+return routes.
+
 ## Versioning
 
 [Semantic versioning](https://semver.org/) with the following clarifications:
