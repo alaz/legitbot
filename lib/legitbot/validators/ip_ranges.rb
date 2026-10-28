@@ -10,6 +10,10 @@ module Legitbot
     # `ip_ranges ip, range, ip, ...`
     # `ip_ranges do [ip, range, ...]; end`
     module IpRanges
+      # A dynamic range source could not supply routes. Unlike an intentionally
+      # empty range list, this must not disable IP verification.
+      class Unavailable < StandardError; end
+
       class << self
         def included(base)
           base.extend ClassMethods
@@ -41,6 +45,8 @@ module Legitbot
           obj = IPAddr.new(ip)
           ranges = valid_ips[obj.ipv4? ? :ipv4 : :ipv6].search(obj.to_i)
           !ranges.nil? && !ranges.empty?
+        rescue Unavailable
+          false
         end
 
         def valid_ips
