@@ -51,7 +51,7 @@ module Legitbot
         def reverse_domains(ip)
           resolver.getnames(ip)
         rescue Resolv::ResolvError
-          nil
+          []
         end
 
         def find_subdomain_record(domains)
