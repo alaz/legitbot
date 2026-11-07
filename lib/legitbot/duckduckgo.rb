@@ -4,8 +4,8 @@ module Legitbot # :nodoc:
   # https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot
   # rubocop:disable Metrics/ClassLength, Metrics/CollectionLiteralLength
   class DuckDuckBot < BotMatch
-    # @fetch:url https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot
-    # @fetch:selector main > article ul > li > div
+    # @fetch:url https://duckduckgo.com/duckduckbot.json
+    # @fetch:jsonpath $.prefixes[*].ipv4Prefix
     ip_ranges %w[
       4.144.148.23
       4.144.182.50
@@ -360,8 +360,8 @@ module Legitbot # :nodoc:
   # https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot
   # rubocop:disable Metrics/ClassLength
   class DuckAssistBot < BotMatch
-    # @fetch:url https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot
-    # @fetch:selector main > article ul > li > div
+    # @fetch:url https://duckduckgo.com/duckassistbot.json
+    # @fetch:jsonpath $.prefixes[*].ipv4Prefix
     ip_ranges %w[
       4.144.182.50
       4.150.142.218
