@@ -8,7 +8,8 @@ end
 
 class MetaTest < Minitest::Test
   def test_fetch_ips
-    # NOTE: network call
+    skip 'Set LEGITBOT_LIVE_RADB=1 to query the external RADB service' unless ENV['LEGITBOT_LIVE_RADB'] == '1'
+
     ip_ranges = MetaIpRanges.new.fetch_ip_ranges_orig
 
     refute_nil ip_ranges
