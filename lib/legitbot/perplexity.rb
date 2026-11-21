@@ -6,6 +6,14 @@ module Legitbot # :nodoc:
     # @fetch:url https://www.perplexity.ai/perplexitybot.json
     # @fetch:jsonpath $.prefixes[*].ipv4Prefix
     ip_ranges %w[
+      3.41.218.160/32
+      3.41.218.161/32
+      3.41.218.162/32
+      3.41.218.163/32
+      3.41.218.164/32
+      3.41.218.165/32
+      3.41.218.166/32
+      3.41.218.167/32
       3.222.232.239/32
       3.224.62.45/32
       18.97.1.228/32
